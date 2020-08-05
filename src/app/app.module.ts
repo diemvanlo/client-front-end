@@ -19,6 +19,9 @@ import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsDetailComponent } from './components/news-detail/news-detail.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PropertyComponent } from './components/property/property.component';
+import { ListPropertiesComponent } from './components/list-properties/list-properties.component';
+import { PropertySaleComponent } from './components/property-sale/property-sale.component';
+import { PropertyRentComponent } from './components/property-rent/property-rent.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -35,7 +38,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     NewsListComponent,
     NewsDetailComponent,
     ContactComponent,
-    PropertyComponent
+    PropertyComponent,
+    ListPropertiesComponent,
+    PropertySaleComponent,
+    PropertyRentComponent
   ],
   imports: [
     DemoMaterialModule,
