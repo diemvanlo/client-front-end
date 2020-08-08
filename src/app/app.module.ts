@@ -22,6 +22,7 @@ import { PropertyComponent } from './components/property/property.component';
 import { ListPropertiesComponent } from './components/list-properties/list-properties.component';
 import { PropertySaleComponent } from './components/property-sale/property-sale.component';
 import { PropertyRentComponent } from './components/property-rent/property-rent.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,7 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PropertyComponent,
     ListPropertiesComponent,
     PropertySaleComponent,
-    PropertyRentComponent
+    PropertyRentComponent,
+    ChatComponent
   ],
   imports: [
     DemoMaterialModule,
