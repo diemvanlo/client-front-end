@@ -10,6 +10,7 @@ import {ListPropertiesComponent} from "../../components/list-properties/list-pro
 import {PropertySaleComponent} from "../../components/property-sale/property-sale.component";
 import {PropertyRentComponent} from "../../components/property-rent/property-rent.component";
 import {ChatComponent} from '../../components/chat/chat.component';
+import {NewsDetailComponent} from '../../components/news-detail/news-detail.component';
 
 export const AdminLayoutRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,4 +24,5 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'property/list-properties-for-sale', component: PropertySaleComponent},
   {path: 'property/list-properties-for-rent', component: PropertyRentComponent},
   {path: 'chat', component: ChatComponent},
+  {path: 'news-detail', component: NewsDetailComponent},
 ];
