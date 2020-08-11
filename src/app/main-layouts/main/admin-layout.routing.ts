@@ -9,10 +9,13 @@ import {PropertyComponent} from '../../components/property/property.component';
 import {ListPropertiesComponent} from "../../components/list-properties/list-properties.component";
 import {PropertySaleComponent} from "../../components/property-sale/property-sale.component";
 import {PropertyRentComponent} from "../../components/property-rent/property-rent.component";
+import {ProjectComponent} from "../../components/project/project.component";
 
 export const AdminLayoutRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'properties', component: PropertiesComponent},
+  {path: 'project', component: ProjectComponent},
+  {path: 'project/:id', component: ListPropertiesComponent},
   {path: 'agent', component: AgentsComponent},
   {path: 'about', component: AboutComponent},
   {path: 'news-list', component: NewsListComponent},

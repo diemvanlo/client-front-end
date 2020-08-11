@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ServiceService} from "../../service/service.service";
+
+const PRODUCT_API = "http://localhost:8080/api/product";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public properties: Array<any>;
+  public term: string;
+
+  constructor(private userServce: ServiceService) {
+  }
 
   ngOnInit(): void {
+    this.userServce.getAll(PRODUCT_API).subscribe(data => {
+      this.properties = data;
+    })
   }
 
 }
