@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {HomeComponent} from './components/home/home.component';
 import {PropertiesComponent} from './components/properties/properties.component';
 import {AdminLayoutComponent} from './main-layouts/main/admin-layout.component';
+import {Vr360ImageComponent} from './vr360-image/vr360-image.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   }, {
     path: 'properties', component: PropertiesComponent,
   },
+  {path: 'vrImage', component: Vr360ImageComponent},
 ];
 
 @NgModule({

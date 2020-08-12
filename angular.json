@@ -36,6 +36,10 @@
               "src/assets/css/style.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/panolens/panolens.min.js",
+              "src/assets/js/three/three.min.js"
             ]
           },
           "configurations": {

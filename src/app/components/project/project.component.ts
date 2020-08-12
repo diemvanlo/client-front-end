@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ServiceService} from "../../service/service.service";
+import {environment} from '../../../environments/environment.prod';
 
 declare var $: any;
 
-const PROJECT_API = "http://localhost:8080/api/project";
+const PROJECT_API = environment.apiEndpoint + "/api/project";
 
 @Component({
   selector: 'app-project',
@@ -21,11 +22,11 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAll(PROJECT_API).subscribe(data => {
       this.projects = data;
-    })
+    });
 
-    this.userService.get(PROJECT_API, this.id).subscribe(data => {
-      this.id = data;
-    })
+    // this.userService.get(PROJECT_API, this.id).subscribe(data => {
+    //   this.id = data;
+    // })
   }
 
 }

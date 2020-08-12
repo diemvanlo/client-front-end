@@ -40,6 +40,9 @@ export class AppComponent implements OnInit {
         this.createNode('node9', 'jquery.richtext.min.js');
         this.createNode('node10', 'image-uploader.min.js');
         this.createNode('node11', 'main.js');
+        this.createNode('node12', 'jquery.min.js');
+        this.createNode('node13', 'three/three.min.js');
+        this.createNode('node14', 'panolens/panolens.min.js');
       }
     });
   }
