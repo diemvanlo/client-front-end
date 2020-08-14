@@ -24,7 +24,7 @@ import { PropertySaleComponent } from './components/property-sale/property-sale.
 import { PropertyRentComponent } from './components/property-rent/property-rent.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ChatComponent } from './components/chat/chat.component';
-import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
+// import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -47,7 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PropertyRentComponent,
     ProjectComponent,
     ChatComponent,
-    Vr360ImageComponent
+    // Vr360ImageComponent
   ],
   imports: [
     DemoMaterialModule,

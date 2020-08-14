@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceService} from "../../service/service.service";
 
-const PRODUCT_API = "http://localhost:8080/api/product"
+const PRODUCT_API = "https://safe-citadel-42709.herokuapp.com/api/product";
 
 @Component({
   selector: 'app-property-sale',

@@ -14,11 +14,12 @@ export class NewsDetailComponent implements OnInit {
   htmlContent: string;
 
   constructor(private route: ActivatedRoute,
-              private router: Router, private httpService: HttpsServiceService,private view: ViewContainerRef) {
+              private router: Router, private httpService: HttpsServiceService, private view: ViewContainerRef) {
     setTimeout(() => this.htmlContent = (view.element.nativeElement as HTMLElement).innerHTML);
   }
 
   ngOnInit() {
+    console.log(this.route.snapshot.queryParamMap.get('id'));
     this.httpService.get(NEWS_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
       this.htmlTemplate = data.content;
       console.log(data);

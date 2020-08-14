@@ -9,9 +9,8 @@ import {PropertyComponent} from '../../components/property/property.component';
 import {ListPropertiesComponent} from "../../components/list-properties/list-properties.component";
 import {PropertySaleComponent} from "../../components/property-sale/property-sale.component";
 import {PropertyRentComponent} from "../../components/property-rent/property-rent.component";
-import {ProjectComponent} from '../../components/project/project.component';
-import {Vr360ImageComponent} from '../../vr360-image/vr360-image.component';
-import {NewsDetailComponent} from '../../components/news-detail/news-detail.component';
+import {ProjectComponent} from "../../components/project/project.component";
+import {NewsDetailComponent} from "../../components/news-detail/news-detail.component";
 
 export const AdminLayoutRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,5 +24,6 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'property/list-properties', component: ListPropertiesComponent},
   {path: 'property/list-properties-for-sale', component: PropertySaleComponent},
   {path: 'property/list-properties-for-rent', component: PropertyRentComponent},
-  {path: 'project', component: ProjectComponent},
+  {path: 'project/view-product', component: ListPropertiesComponent},
+  {path: 'project', component: ProjectComponent}
 ];

@@ -1,10 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {ServiceService} from "../../service/service.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {HttpsServiceService} from "../../service/https-service.service";
 
 declare var $: any;
 
-const PRODUCT_API = "http://localhost:8080/api/product";
-const PROJECT_API = "http://localhost:8080/api/project";
+const PRODUCT_API = "https://safe-citadel-42709.herokuapp.com/api/product";
+const GET_PRODUCT_BY_PROJECT_API = PRODUCT_API + "/getByProjectId";
 
 @Component({
   selector: 'app-list-properties',
@@ -14,20 +16,22 @@ const PROJECT_API = "http://localhost:8080/api/project";
 export class ListPropertiesComponent implements OnInit {
 
   public properties: Array<any>;
-  public term: string;
-  public id: any;
 
-  constructor(private userService: ServiceService) {
+  constructor(private route: ActivatedRoute,
+              private router: Router, private userService: ServiceService) {
   }
 
   ngOnInit(): void {
-    this.userService.get(PRODUCT_API, this.id).subscribe(data => {
-      this.id = data;
-    })
+    if (this.route.snapshot.queryParamMap.get('id') === '') {
+      this.userService.getAll(PRODUCT_API).subscribe(data => {
+        this.properties = data;
+      })
+    } else (
+      this.userService.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
+        this.properties = data;
+      })
+    )
 
-    // this.userService.getAll(PRODUCT_API).subscribe(data => {
-    //   this.properties = data;
-    // })
   }
 
 }
