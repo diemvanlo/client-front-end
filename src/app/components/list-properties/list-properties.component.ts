@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {ServiceService} from "../../service/service.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {HttpsServiceService} from "../../service/https-service.service";
 
 declare var $: any;
 
@@ -22,6 +21,9 @@ export class ListPropertiesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userService.getAll(PRODUCT_API).subscribe(data => {
+      this.properties = data;
+    })
     if (this.route.snapshot.queryParamMap.get('id') === '') {
       this.userService.getAll(PRODUCT_API).subscribe(data => {
         this.properties = data;
