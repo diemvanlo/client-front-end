@@ -25,6 +25,8 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
+    "@ckeditor/ckeditor5-angular": "^1.2.3",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^20.0.0",
     "@egjs/view360": "^3.3.2",
     "@ng-bootstrap/ng-bootstrap": "~5.2.2",
     "@ngx-translate/core": "^12.1.2",

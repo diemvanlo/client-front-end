@@ -24,6 +24,8 @@ import { PropertySaleComponent } from './components/property-sale/property-sale.
 import { PropertyRentComponent } from './components/property-rent/property-rent.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 // import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,6 +49,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PropertyRentComponent,
     ProjectComponent,
     ChatComponent,
+    RegisterComponent,
+    LoginComponent,
     // Vr360ImageComponent
   ],
   imports: [

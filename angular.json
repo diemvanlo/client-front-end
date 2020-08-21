@@ -33,11 +33,15 @@
               "src/assets/css/owl.carousel.min.css",
               "src/assets/css/magnific-popup.css",
               "src/assets/css/slicknav.min.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/assets/css/style.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
               "src/assets/js/jquery.min.js",
+              "node_modules/bootstrap-notify/bootstrap-notify.js",
               "src/assets/js/panolens/panolens.min.js",
               "src/assets/js/three/three.min.js"
             ]

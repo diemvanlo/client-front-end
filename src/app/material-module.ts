@@ -41,7 +41,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
-import {MatFormFieldModule} from '@angular/material';
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -50,6 +49,8 @@ import {NgxView360Module} from "ngx-view360";
 import {Ng5SliderModule} from 'ng5-slider';
 import {HttpClient} from "@angular/common/http";
 import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
+import {CKEditor5, CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import {MatFormFieldModule} from '@angular/material';
 
 @NgModule({
     exports: [
@@ -73,7 +74,6 @@ import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
         MatDividerModule,
         MatExpansionModule,
         MatGridListModule,
-        MatIconModule,
         MatInputModule,
         MatListModule,
         MatMenuModule,
@@ -103,7 +103,6 @@ import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
         MatIconModule,
         MatButtonModule,
         BrowserAnimationsModule,
-        MatFormFieldModule,
         ReactiveFormsModule,
         NgxView360Module,
         MatRadioModule,
@@ -115,6 +114,7 @@ import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
         MatSnackBarModule,
         Ng5SliderModule,
         NgbPaginationModule,
+        CKEditorModule,
         MatFormFieldModule
     ]
 })
