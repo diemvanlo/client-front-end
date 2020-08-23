@@ -9,7 +9,8 @@ const AGENT_API = environment.apiEndpoint + '/api/agent';
 @Component({
   selector: 'app-chat-friend-list',
   templateUrl: './chat-friend-list.component.html',
-  styleUrls: ['./chat-friend-list.component.css']
+  styleUrls: ['./chat-friend-list.component.scss',
+  ]
 })
 export class ChatFriendListComponent implements OnInit {
 

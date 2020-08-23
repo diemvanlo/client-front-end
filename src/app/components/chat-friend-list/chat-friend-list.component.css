@@ -10,7 +10,9 @@
   margin-right: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,.25);
   border-bottom:0;
-  background-color: whitesmoke;
+  background: #7F7FD5;
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
   z-index: 99;
 }
 #ng-chat-people.ng-chat-people-collapsed
