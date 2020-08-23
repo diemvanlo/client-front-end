@@ -3,8 +3,9 @@ import {HttpsServiceService} from '../../service/https-service.service';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import {UploadAdapter} from '../../service/upload-adapter';
 import {NotificationService} from '../../service/notification.service';
+import {environment} from '../../../environments/environment.prod';
 
-const SIGN_UP_AS_AGENT = 'http://localhost:8080/api/agent/signup';
+const SIGN_UP_AS_AGENT = environment.apiEndpoint + '/api/agent/signup';
 
 @Component({
   selector: 'app-register',

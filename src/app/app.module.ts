@@ -23,9 +23,17 @@ import { ListPropertiesComponent } from './components/list-properties/list-prope
 import { PropertySaleComponent } from './components/property-sale/property-sale.component';
 import { PropertyRentComponent } from './components/property-rent/property-rent.component';
 import { ProjectComponent } from './components/project/project.component';
-import { ChatComponent } from './components/chat/chat.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { CodeSocketComponent } from './components/code-socket/code-socket.component';
+import {Vr360ImageComponent} from './vr360-image/vr360-image.component';
+import {ToastrModule} from 'ngx-toastr';
+import {YamiCodeSocketComponent} from './components/yami-code-socket/yami-code-socket.component';
+import { ChatModule } from '@progress/kendo-angular-conversational-ui';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChatFriendListComponent } from './components/chat-friend-list/chat-friend-list.component';
+
+
 // import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,15 +56,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     PropertySaleComponent,
     PropertyRentComponent,
     ProjectComponent,
-    ChatComponent,
     RegisterComponent,
     LoginComponent,
-    // Vr360ImageComponent
+    CodeSocketComponent,
+    YamiCodeSocketComponent,
+    Vr360ImageComponent,
+    ChatFriendListComponent,
   ],
   imports: [
     DemoMaterialModule,
     HttpClientModule,
     RoutingModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -64,6 +75,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    ChatModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

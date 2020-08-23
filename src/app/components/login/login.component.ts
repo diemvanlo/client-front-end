@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.username = this.tokenstorage.getUsername();
-        this.notification.showNotification('Đăng ký thành công', 'Đăng ký thành công', '');
+        this.notification.showNotification('Đăng nhập thành công', 'Đăng nhập thành công', '');
         this.router.navigate(['/']);
       },
       error => {

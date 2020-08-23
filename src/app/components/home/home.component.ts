@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ServiceService} from "../../service/service.service";
+import {ServiceService} from '../../service/service.service';
+import {environment} from '../../../environments/environment.prod';
 
-const PRODUCT_API = "http://localhost:8080/api/product";
+const PRODUCT_API = environment.apiEndpoint + '/api/product';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.userServce.getAll(PRODUCT_API).subscribe(data => {
       this.properties = data;
-    })
+    });
   }
 
 }

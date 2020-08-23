@@ -1,0 +1,34 @@
+<div id="ng-chat-people"
+     [ngClass]="{'ng-chat-people-collapsed': isCollapsed}">
+  <a href="javascript:void(0);" class="ng-chat-title secondary-background shadowed" (click)="onChatTitleClicked()">
+    Danh sách bạn bè
+  </a>
+  <div class="ng-chat-people-actions" (click)="onFriendsListActionCancelClicked()">
+    <a href="javascript:void(0);" class="ng-chat-people-action">
+      <i class="remove-icon"></i>
+    </a>
+    <a href="javascript:void(0);" class="ng-chat-people-action" (click)="onFriendsListActionConfirmClicked()">
+      <i class="check-icon"></i>
+    </a>
+  </div>
+  <input *ngIf="searchEnabled" id="ng-chat-search_friend" class="friends-search-bar" type="search" placeholder="Search"
+         [(ngModel)]="searchInput"/>
+  <ul id="ng-chat-users" [ngClass]="{'offset-search': searchEnabled}">
+    <li *ngFor="let user of filteredParticipants">
+      <div *ngIf="storage.getUsername() !== user.user.username">
+        <input
+          type="checkbox"
+          class="ng-chat-users-checkbox"
+          (change)="onFriendsListCheckboxChange(user, $event.target.checked)"
+          [checked]="isUserSelectedFromFriendsList(user)"/>
+        <div (click)="onUserClick(user)">
+          <div *ngIf="!user.avatar" class="icon-wrapper">
+            <i class="user-icon"></i>
+          </div>
+          <img *ngIf="user.avatar" alt="" class="avatar" height="30" width="30" [src]="user.avatar"/>
+          <strong title="{{user.user.fullName}}">{{user.user.fullName}}</strong>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

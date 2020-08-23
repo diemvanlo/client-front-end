@@ -13,6 +13,7 @@ import {ProjectComponent} from "../../components/project/project.component";
 import {NewsDetailComponent} from "../../components/news-detail/news-detail.component";
 import {RegisterComponent} from '../../components/register/register.component';
 import {LoginComponent} from '../../components/login/login.component';
+import {CodeSocketComponent} from '../../components/code-socket/code-socket.component';
 
 export const AdminLayoutRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,4 +31,5 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'project', component: ProjectComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'chat-demo', component: CodeSocketComponent},
 ];

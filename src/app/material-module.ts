@@ -41,82 +41,75 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
-import {BrowserModule} from "@angular/platform-browser";
-import {AppRoutingModule} from "./app-routing.module";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {NgxView360Module} from "ngx-view360";
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxView360Module} from 'ngx-view360';
 import {Ng5SliderModule} from 'ng5-slider';
-import {HttpClient} from "@angular/common/http";
-import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
+import {HttpClient} from '@angular/common/http';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {CKEditor5, CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import {MatFormFieldModule} from '@angular/material';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
-    exports: [
-        A11yModule,
-        ClipboardModule,
-        CdkStepperModule,
-        CdkTableModule,
-        CdkTreeModule,
-        DragDropModule,
-        MatAutocompleteModule,
-        MatBadgeModule,
-        MatBottomSheetModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatCardModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatStepperModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatDividerModule,
-        MatExpansionModule,
-        MatGridListModule,
-        MatInputModule,
-        MatListModule,
-        MatMenuModule,
-        MatNativeDateModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSidenavModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        MatSortModule,
-        MatTableModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatTreeModule,
-        PortalModule,
-        ScrollingModule,
-        BrowserModule,
-        AppRoutingModule,
-        MatStepperModule,
-        FormsModule,
-        MatIconModule,
-        MatButtonModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        NgxView360Module,
-        MatRadioModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSidenavModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        Ng5SliderModule,
-        NgbPaginationModule,
-        CKEditorModule,
-        MatFormFieldModule
-    ]
+  exports: [
+    A11yModule,
+    ClipboardModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    PortalModule,
+    ScrollingModule,
+    BrowserModule,
+    AppRoutingModule,
+    MatStepperModule,
+    FormsModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    NgxView360Module,
+    Ng5SliderModule,
+    NgbPaginationModule,
+    CKEditorModule,
+    MatFormFieldModule,
+  ]
 })
 export class DemoMaterialModule {
 }
