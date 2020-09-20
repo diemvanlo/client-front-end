@@ -4,6 +4,7 @@ import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import {UploadAdapter} from '../../service/upload-adapter';
 import {NotificationService} from '../../service/notification.service';
 import {environment} from '../../../environments/environment.prod';
+import {Router} from '@angular/router';
 
 const SIGN_UP_AS_AGENT = environment.apiEndpoint + '/api/agent/signup';
 
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
     };
   }
 
-  constructor(private httpsServiceService: HttpsServiceService, private notification: NotificationService) {
+  constructor(private httpsServiceService: HttpsServiceService, private notification: NotificationService, public router: Router) {
   }
 
   ngOnInit(): void {
@@ -43,6 +44,7 @@ export class RegisterComponent implements OnInit {
       this.httpsServiceService.post(SIGN_UP_AS_AGENT, this.registerUser).subscribe(
         data => {
           this.notification.showNotification('Đăng ký thành công', 'Đăng ký thành công', '');
+          this.router.navigate(['/login']);
         }, error => {
           this.notification.showNotification('Đăng ký thất bại', error.error.message, 'danger');
         }

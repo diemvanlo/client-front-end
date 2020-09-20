@@ -41,7 +41,7 @@ export class HttpsServiceService {
     return this.http.get(url + '/' + id);
   }
 
-  post(url, model) {
+  post(url, model): Observable<any> {
     return this.http.post(url, model);
   }
 

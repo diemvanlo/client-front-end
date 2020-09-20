@@ -4,13 +4,15 @@ import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import {ToastrService} from 'ngx-toastr';
 import {SocketService} from '../../service/socket.service';
-import {BehaviorSubject, from, merge, Observable, Subject} from 'rxjs';
+import {BehaviorSubject, from, merge, Observable, of, Subject, Subscription} from 'rxjs';
 import {Message, SendMessageEvent, User} from '@progress/kendo-angular-conversational-ui';
 import {StorageService} from '../../auth/storage.service';
 import {environment} from '../../../environments/environment.prod';
 import {scan} from 'rxjs/operators';
+import {HttpsServiceService} from '../../service/https-service.service';
 
-// const SOCKET_API = environment.apiEndpoint + '/api/socket';
+const SOCKET_API = environment.apiEndpoint + '/api/socket';
+
 @Component({
   selector: 'code-socket',
   templateUrl: './code-socket.component.html',
@@ -24,8 +26,7 @@ export class CodeSocketComponent implements OnInit {
   public user: User = {
     id: 1
   };
-
-  contacts$ = new BehaviorSubject([]);
+  subscription: Subscription;
 
   public toUser: User = {
     id: 0
@@ -33,7 +34,8 @@ export class CodeSocketComponent implements OnInit {
   messageList: Message[] = [];
   private local: Subject<Message> = new Subject<Message>();
 
-  constructor(private storage: StorageService, private toastr: ToastrService, private socketService: SocketService) {
+  constructor(private storage: StorageService, private toastr: ToastrService, private socketService: SocketService,
+              private httpService: HttpsServiceService) {
     this.feed = merge(
       this.local
     ).pipe(
@@ -44,7 +46,6 @@ export class CodeSocketComponent implements OnInit {
   ngOnInit(): void {
     this.user.id = this.storage.getUsername();
     this.user.name = this.storage.getName();
-    console.log(this.user);
     this.initializeWebSocketConnection();
   }
 
@@ -55,8 +56,26 @@ export class CodeSocketComponent implements OnInit {
   }
 
   openSocket() {
-    console.log('open socket');
-    this.stompClient.subscribe('/socket-publisher/' + this.user.id, (message) => {
+    if (this.subscription !== undefined) {
+      this.subscription.unsubscribe();
+    }
+    this.feed = of([]);
+    this.feed = merge(
+      this.local
+    ).pipe(
+      scan((acc: Message[], x: Message) => [...acc, x], [])
+    );
+    this.httpService.post(SOCKET_API + '/getContact', {fromId: this.user.id, toId: this.toUser.id}).subscribe(
+      data => {
+        data.forEach(item => {
+          this.local.next({
+            author: {id: item.fromUser.username, name: item.fromUser.username == this.user.id ? this.user.name : this.toUser.name},
+            text: item.content
+          });
+        });
+      }
+    );
+    this.subscription = this.stompClient.subscribe('/socket-publisher/' + this.user.id, (message) => {
       this.handleResult(message);
     });
   }
@@ -79,7 +98,6 @@ export class CodeSocketComponent implements OnInit {
   handleResult(message) {
     if (message.body) {
       let messageResult: any = JSON.parse(message.body);
-      console.log(messageResult);
       this.local.next({
         author: {id: messageResult.fromId, name: messageResult.fromId == this.user.id ? this.user.name : this.toUser.name},
         text: messageResult.message

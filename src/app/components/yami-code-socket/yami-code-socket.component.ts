@@ -3,10 +3,10 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
-import {environment} from '../../../environments/environment';
 import {ToastrService} from 'ngx-toastr';
 import {Message} from '../../model/message';
 import {SocketService} from '../../service/socket.service';
+import {environment} from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-yami-code-socket',
@@ -14,7 +14,7 @@ import {SocketService} from '../../service/socket.service';
   styleUrls: ['./yami-code-socket.component.css']
 })
 export class YamiCodeSocketComponent implements OnInit {
-  private serverUrl = environment.url + 'socket';
+  private serverUrl = environment.apiEndpoint + 'socket';
   isLoaded: boolean = false;
   isCustomSocketOpened = false;
   private stompClient;
