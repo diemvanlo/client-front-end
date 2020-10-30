@@ -26,7 +26,15 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="position: relative">
+      <ngx-spinner
+        bdColor="rgba(74,74,74,0.12)"
+        size="medium"
+        color="#8c33b4"
+        type="ball-scale-multiple" [fullScreen]="false" [name]="'loading_list'"
+      >
+        <p style="font-size: 20px; color: black"></p>
+      </ngx-spinner>
       <div class="col-lg-4 col-md-6" *ngFor="let property of properties">
         <div class="property-item">
           <div class="pi-pic set-bg" [ngStyle]="{'background-image': 'url(' + property.image + ')'}">
