@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: "https://safe-citadel-42709.herokuapp.com"
+  // url: "https://safe-citadel-42709.herokuapp.com"
 };
 
 /*

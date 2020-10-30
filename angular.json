@@ -42,6 +42,12 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
+              "src/assets/js/view360.panoviewer.pkgd.min.js",
+              "src/assets/pano2vr_player.js",
+              "src/assets/skin.js",
+              "src/assets/js/view360.panoviewer.pkgd.min.js",
+              "src/assets/pano2vr_player.js",
+              "src/assets/skin.js",
               "node_modules/popper.js/dist/umd/popper.js",
               "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
               "src/assets/js/jquery.min.js",
@@ -70,7 +76,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumError": "7mb"
                 },
                 {
                   "type": "anyComponentStyle",

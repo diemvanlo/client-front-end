@@ -32,6 +32,7 @@ import {YamiCodeSocketComponent} from './components/yami-code-socket/yami-code-s
 import { ChatModule } from '@progress/kendo-angular-conversational-ui';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatFriendListComponent } from './components/chat-friend-list/chat-friend-list.component';
+import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 // import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
@@ -77,6 +78,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     ChatModule,
     BrowserAnimationsModule,
+    NgbTypeaheadModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
