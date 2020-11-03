@@ -19,6 +19,28 @@ export class RegisterComponent implements OnInit {
   public model = {
     editorData: '<p>Hello, world!</p>'
   };
+  selectedFiles: FileList;
+
+  selectFile(event, index: number) {
+    const file = event.target.files.item(0);
+    if (event.target.files.length > 0 && file.type.match('image.*')) {
+      this.selectedFiles = event.target.files;
+    } else {
+      alert('Invaild Format');
+    }
+    if (event.target.files.length > 0) {
+      this.readThis(event.target, index);
+    }
+  }
+
+  readThis(inputValue: any, index: number): void {
+    var file: File = inputValue.files[0];
+    var myReader: FileReader = new FileReader();
+    myReader.onloadend = (e) => {
+      this.registerUser.user.image = myReader.result;
+    };
+    myReader.readAsDataURL(file);
+  }
 
   public onReady(editor) {
     editor.ui.getEditableElement().parentElement.insertBefore(

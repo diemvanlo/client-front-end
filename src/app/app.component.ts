@@ -42,7 +42,9 @@ export class AppComponent implements OnInit {
         this.createNode('node11', 'main.js');
         this.createNode('node12', 'jquery.min.js');
         this.createNode('node13', 'three/three.min.js');
-        this.createNode('node14', 'panolens/panolens.min.js');
+        // this.createNode('node14', 'view360.panoviewer.pkgd.min.js');
+        // this.createNode('node15', 'pano2vr_player.js');
+        // this.createNode('node16', 'skin.js');
       }
     });
   }

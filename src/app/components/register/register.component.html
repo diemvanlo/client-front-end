@@ -44,6 +44,13 @@
           </form>
           <ckeditor [(ngModel)]="registerUser.content" [editor]="Editor" data="<p>Hello, world!</p>"
                     (ready)="onReady($event)" name="contentEditor"></ckeditor>
+          <div class="col-md-12 pb-5">
+            <div class="custom-file">
+              <input type="file" (change)="selectFile($event,0)" class="custom-file-input" id="validatedCustomFile"
+                     required>
+              <label class="custom-file-label" for="validatedCustomFile">{{'Up load ảnh đại diện'| translate}}</label>
+            </div>
+          </div>
           <button type="submit" class="site-btn" (click)="signUpAsAgent()">Đăng ký</button>
         </div>
       </div>

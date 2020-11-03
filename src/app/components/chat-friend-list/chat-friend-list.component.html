@@ -18,16 +18,16 @@
   <ul id="ng-chat-users" [ngClass]="{'offset-search': searchEnabled}">
     <li *ngFor="let user of filteredParticipants">
       <div *ngIf="storage.getUsername() !== user.user.username">
-        <input
-          type="checkbox"
-          class="ng-chat-users-checkbox"
-          (change)="onFriendsListCheckboxChange(user, $event.target.checked)"
-          [checked]="isUserSelectedFromFriendsList(user)"/>
+<!--        <input-->
+<!--          type="checkbox"-->
+<!--          class="ng-chat-users-checkbox"-->
+<!--          (change)="onFriendsListCheckboxChange(user, $event.target.checked)"-->
+<!--          [checked]="isUserSelectedFromFriendsList(user)"/>-->
         <div (click)="onUserClick(user)">
-          <div *ngIf="!user.avatar" class="icon-wrapper">
+          <div *ngIf="!user.user.image" class="icon-wrapper">
             <i class="user-icon"></i>
           </div>
-          <img *ngIf="user.avatar" alt="" class="avatar" height="30" width="30" [src]="user.avatar"/>
+          <img *ngIf="user.user.image" alt="" class="avatar" height="30" width="30" style="border-radius: 50%" [src]="user.user.image"/>
           <strong title="{{user.user.fullName}}">{{user.user.fullName}}</strong>
         </div>
       </div>
