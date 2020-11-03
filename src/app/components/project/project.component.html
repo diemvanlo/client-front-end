@@ -35,18 +35,34 @@
       </div>
     </div>
     <div class="row property-filter" >
-
-      <div class="col-lg-4 col-md-6" *ngFor="let item of projects">
-        <div class="property-item">
-          <div class="pi-pic set-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
-          <div class="pi-text">
-            <h5><a routerLink="" style="text-transform: capitalize" (click)="privew(item.id)">{{item.tenDuAn}}</a></h5>
-            <p><span class="icon_pin_alt"></span> {{item.diaChi}}</p>
-            <ul></ul>
-          </div>
-        </div>
+<!--      <div class="col-lg-4 col-md-6" *ngFor="let item of projects">-->
+<!--        <div class="property-item">-->
+<!--          <div class="pi-pic set-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>-->
+<!--          <div class="pi-text">-->
+<!--            <h5><a routerLink="" style="text-transform: capitalize" (click)="privew(item.id)">{{item.tenDuAn}}</a></h5>-->
+<!--            <p><span class="icon_pin_alt"></span> {{item.diaChi}}</p>-->
+<!--            <ul></ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+      <div style="cursor: pointer"
+           *ngFor="let item of projects | slice: (pageNews-1) * pageSize : (pageNews-1) * pageSize + pageSize, let i = index"
+           class="col-lg-4 col-md-6"
+          >
+                <div class="property-item">
+                  <div class="pi-pic set-bg" [ngStyle]="{'background-image': 'url(' + (item.image ? item.image : 'https://cafefcdn.com/thumb_w/650/2018/9/24/httpchannelvcmediavnprupload270201809img201809241418310252-1537777669673902461834.jpg') + ')'}"></div>
+                  <div class="pi-text">
+                    <h5><a routerLink="" style="text-transform: capitalize" (click)="privew(item.id)">{{item.tenDuAn}}</a></h5>
+                    <p><span class="icon_pin_alt"></span> {{item.diaChi}}</p>
+                    <ul></ul>
+                  </div>
+                </div>
       </div>
     </div>
   </div>
+  <ngb-pagination *ngIf="projects"
+                  [(page)]="pageNews"
+                  [pageSize]="pageSize"
+                  [collectionSize]="projects.length"></ngb-pagination>
 </section>
 <!-- Property Section End -->
