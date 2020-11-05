@@ -19,6 +19,8 @@ export class ProjectComponent implements OnInit {
 
   public projects: Array<any>;
   public products: Array<any>;
+  pageNews = 1;
+  pageSize = 6;
 
   constructor(private userService: ServiceService, public router: Router, private spinner: NgxSpinnerService) {
     this.spinner.show('loading_projects');
