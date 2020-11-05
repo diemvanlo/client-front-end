@@ -27,6 +27,10 @@ export class ServiceService {
     return this.http.post(url + '/searchAllColumn2', {searchString: term});
   }
 
+  post(url, term: any,): Observable<any> {
+    return this.http.post(url, {searchString: term});
+  }
+
   get(url, id: any) {
     return this.http.get<any>(url + '/' + id);
   }

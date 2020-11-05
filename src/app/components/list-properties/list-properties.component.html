@@ -28,7 +28,7 @@
         <div class="cf-content">
           <form action="#" class="cc-form">
             <div class="group-input">
-              <input (input)="onSearchChange($event.target.value)" name="username" type="text" placeholder="Tìm kiếm">
+              <input (input)="onSearchChange($event.target.value)" [ngbTypeahead]="search" [(ngModel)]="term" name="username" type="text" placeholder="Tìm kiếm">
             </div>
           </form>
         </div>
@@ -59,7 +59,7 @@
       <div class="col-lg-4 col-md-6" *ngFor="let property of properties">
         <div class="property-item">
           <div class="pi-pic set-bg"
-               [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
+               [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image != null ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
             <div class="label">Rao bán</div>
           </div>
           <div class="pi-text">

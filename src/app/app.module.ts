@@ -32,6 +32,8 @@ import { ChatModule } from '@progress/kendo-angular-conversational-ui';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatFriendListComponent } from './components/chat-friend-list/chat-friend-list.component';
 import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
+import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 // import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
@@ -62,6 +64,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     YamiCodeSocketComponent,
     Vr360ImageComponent,
     ChatFriendListComponent,
+    PaymentComponent,
   ],
   imports: [
     DemoMaterialModule,
@@ -78,6 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ChatModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    NgbTypeaheadModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

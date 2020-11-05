@@ -1937,7 +1937,6 @@ ol {
 .review-form,
 .leave-comment-form,
 .cc-form {
-  overflow: hidden;
   position: relative;
 }
 .review-form .group-input,
