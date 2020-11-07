@@ -7,6 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "start-ssr": "npm run build:ssr && npm run server:ssr",
     "e2e": "ng e2e"
   },
   "private": true,
