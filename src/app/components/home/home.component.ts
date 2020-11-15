@@ -12,6 +12,7 @@ const PRODUCT_API = environment.apiEndpoint + '/api/product';
 })
 export class HomeComponent implements OnInit {
 
+  DEFAULT_IMAGE = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT43JMDb6bteHLIF9_oXUXrGjaaOBSAYYMAgA&usqp=CAU';
   public properties: Array<any>;
   public term: string;
 
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userServce.getAll(PRODUCT_API).subscribe(data => {
-      this.properties = data;
+      this.properties = data.hits.hits;
       this.spinner.hide('homes');
 
     });

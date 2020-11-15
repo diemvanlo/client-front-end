@@ -5,7 +5,7 @@
     <div class="hs-slider owl-carousel">
       <div class="hs-item set-bg" data-setbg="assets/img/hero/hero-1.jpg">
         <div class="row">
-          <div class="col-lg-12">tháng
+          <div class="col-lg-12">
             <div class="hc-inner-text">
               <div class="hc-text">
                 <h4>Dragon city</h4>
@@ -249,33 +249,22 @@
       </div>
     </div>
     <div class="row property-filter">
-      <div class="col-lg-4 col-md-6 mix all house">
+      <div class="col-lg-4 col-md-6 mix all house" *ngFor="let item of properties">
         <div class="property-item">
-          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-1.jpg">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-1.jpg" [ngStyle]="{'background-image': 'url(' + (item.sourceAsMap.image != null ? item.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
             <div class="label">Rao bán</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">VNĐ 289.0<span>/tháng</span></div>
-            <h5><a routerLink="/">Golden Land city</a></h5>
-            <p><span class="icon_pin_alt"></span>96 Âu Cơ, Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng</p>
+            <div class="pt-price">{{item.sourceAsMap.giaTien}}<span>/tháng</span></div>
+            <h5><a routerLink="/">{{item.sourceAsMap.tenSanPham}}</a></h5>
+            <p><span class="icon_pin_alt"></span>{{item.sourceAsMap.diaChi}}</p>
             <ul>
               <li><i class="fa fa-object-group"></i> 2, 283</li>
               <li><i class="fa fa-bathtub"></i> 03</li>
               <li><i class="fa fa-bed"></i> 05</li>
               <li><i class="fa fa-automobile"></i> 01</li>
             </ul>
-<!--            <div class="pi-agent">-->
-<!--              <div class="pa-item">-->
-<!--                <div class="pa-info">-->
-<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
-<!--                  <h6>Nguyễn Hữu Tài</h6>-->
-<!--                </div>-->
-<!--                <div class="pa-text">-->
-<!--                  123-455-688-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
           </div>
         </div>
       </div>
