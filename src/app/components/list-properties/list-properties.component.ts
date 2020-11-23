@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../../environments/environment.prod';
 import {Observable} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, map, switchMap, tap} from 'rxjs/operators';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 declare var $: any;
 
@@ -21,15 +22,19 @@ export class ListPropertiesComponent implements OnInit {
   public properties: Array<any>;
   public term: string;
   searching = false;
+  pageNews = 1;
+  pageSize = 6;
 
   constructor(private route: ActivatedRoute,
-              private router: Router, private userService: ServiceService) {
+              private router: Router, private userService: ServiceService, private spinner: NgxSpinnerService) {
+    this.spinner.show('loading_list');
   }
 
   ngOnInit(): void {
     this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
       console.log(data.hits.hits);
       this.properties = data.hits.hits;
+      this.spinner.hide('loading_list');
     });
     // this.userService.getAll(PRODUCT_API).subscribe(data => {
     // });
@@ -52,7 +57,7 @@ export class ListPropertiesComponent implements OnInit {
         this.userService.post(PRODUCT_API + '/getHints', this.term).pipe()
       ),
       tap(() => this.searching = false)
-    );
+    )
 
   suggest() {
 

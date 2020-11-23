@@ -1,4 +1,12 @@
 <!-- Breadcrumb Section Begin -->
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple" [fullScreen]="true" [name]="'loading_projects'"
+>
+  <p style="font-size: 20px; color: black"></p>
+</ngx-spinner>
 <section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-bg.jpg">
   <div class="container">
     <div class="row">
@@ -20,14 +28,7 @@
   <div class="container" >
 
     <div class="row" style="position: relative">
-      <ngx-spinner
-        bdColor="rgba(74,74,74,0.12)"
-        size="medium"
-        color="#8c33b4"
-        type="ball-scale-multiple" [fullScreen]="false" [name]="'loading_projects'"
-      >
-        <p style="font-size: 20px; color: black">{{"Loading..." | translate}}</p>
-      </ngx-spinner>
+
       <div class="col-lg-5">
         <div class="section-title">
           <h4>Dự án nổi bật</h4>
@@ -58,11 +59,13 @@
                   </div>
                 </div>
       </div>
+
     </div>
+    <ngb-pagination *ngIf="projects"
+                    [(page)]="pageNews"
+                    [pageSize]="pageSize"
+                    [collectionSize]="projects.length"></ngb-pagination>
   </div>
-  <ngb-pagination *ngIf="projects"
-                  [(page)]="pageNews"
-                  [pageSize]="pageSize"
-                  [collectionSize]="projects.length"></ngb-pagination>
+
 </section>
 <!-- Property Section End -->

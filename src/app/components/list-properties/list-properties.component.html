@@ -1,4 +1,12 @@
 <!-- Breadcrumb Section Begin -->
+<!--      <ngx-spinner-->
+<!--        bdColor="rgba(0, 0, 0, 0.8)"-->
+<!--        size="medium"-->
+<!--        color="#fff"-->
+<!--        type="ball-scale-multiple" [fullScreen]="true" [name]="'loading_list'"-->
+<!--      >-->
+<!--        <p style="font-size: 20px; color: black"></p>-->
+<!--      </ngx-spinner>-->
 <section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-bg.jpg">
   <div class="container">
     <div class="row">
@@ -47,15 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="row" style="position: relative">
-      <ngx-spinner
-        bdColor="rgba(74,74,74,0.12)"
-        size="medium"
-        color="#8c33b4"
-        type="ball-scale-multiple" [fullScreen]="false" [name]="'loading_list'"
-      >
-        <p style="font-size: 20px; color: black"></p>
-      </ngx-spinner>
+    <div class="row">
       <div class="col-lg-4 col-md-6" *ngFor="let property of properties">
         <div class="property-item">
           <div class="pi-pic set-bg"
@@ -82,6 +82,10 @@
         </div>
       </div>
     </div>
+    <ngb-pagination *ngIf="properties"
+                    [(page)]="pageNews"
+                    [pageSize]="pageSize"
+                    [collectionSize]="properties.length"></ngb-pagination>
   </div>
 </section>
 <!-- Property Section End -->
