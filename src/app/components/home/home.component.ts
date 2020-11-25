@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userServce.getAll(PRODUCT_API).subscribe(data => {
-      this.properties = data.hits.hits;
+      //this.p  roperties = data.hits.hits;
+      this.properties = data;
       this.spinner.hide('homes');
 
     });

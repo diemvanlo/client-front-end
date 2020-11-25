@@ -19,6 +19,11 @@ export class HttpsServiceService {
     return this.http.get<any>(url + '/');
   }
 
+  paypal(url, num: any): Observable<any> {
+    this.showNotification('Thông báo', "Successfully!");
+    return this.http.post(url , num);
+  }
+
   save(url, model: any,): Observable<any> {
     const req = new HttpRequest('POST', url + '/save', model);
     return this.http.request(req);
