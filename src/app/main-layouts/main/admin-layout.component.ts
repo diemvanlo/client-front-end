@@ -14,7 +14,17 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./admin-layout.component.css']
 })
 export class AdminLayoutComponent implements OnInit {
+
+  constructor(private localStoreage: StorageService) {
+  }
+
   ngOnInit(): void {
+
+  }
+
+  isSignIn() {
+    return this.localStoreage.getToken() != null;
+
   }
 
 }
