@@ -2,8 +2,8 @@ import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {ServiceService} from '../../service/service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../../environments/environment.prod';
-import {Observable} from 'rxjs';
-import {catchError, debounceTime, distinctUntilChanged, map, switchMap, tap} from 'rxjs/operators';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {catchError, debounceTime, distinctUntilChanged, last, map, switchMap, tap} from 'rxjs/operators';
 import {NgxSpinnerService} from 'ngx-spinner';
 
 declare var $: any;
@@ -41,7 +41,6 @@ export class ListPropertiesComponent implements OnInit {
   }
 
   onSearchChange(value) {
-    // console.log(value);
     this.userService.searchAllColumn(PRODUCT_API, value).subscribe(data => {
       // console.log(data.hits.hits);
       this.properties = data.hits.hits;
@@ -57,7 +56,7 @@ export class ListPropertiesComponent implements OnInit {
         this.userService.post(PRODUCT_API + '/getHints', this.term).pipe()
       ),
       tap(() => this.searching = false)
-    )
+    );
 
   suggest() {
 

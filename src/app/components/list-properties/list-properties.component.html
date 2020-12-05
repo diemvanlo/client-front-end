@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6" *ngFor="let property of properties">
+      <div class="col-lg-4 col-md-6" *ngFor="let property of properties | slice: (pageNews-1) * pageSize : pageNews * pageSize">
         <div class="property-item">
           <div class="pi-pic set-bg"
                [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image != null ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
