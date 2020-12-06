@@ -20,6 +20,7 @@ export class ListPropertiesComponent implements OnInit {
 
   DEFAULT_IMAGE = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT43JMDb6bteHLIF9_oXUXrGjaaOBSAYYMAgA&usqp=CAU';
   public properties: Array<any>;
+  public propertiesGetAll: Array<any>;
   public term: string;
   searching = false;
   pageNews = 1;
@@ -31,13 +32,24 @@ export class ListPropertiesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Load Init
+    this.getAll();
+    this.searchAllColumn();
+  }
+
+  getAll(){
+    this.userService.getAll(PRODUCT_API).subscribe(data => {
+      this.propertiesGetAll = data.hits.hits;
+      console.log(data.hits.hits)
+    })
+  }
+
+  searchAllColumn(){
     this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
       console.log(data.hits.hits);
       this.properties = data.hits.hits;
       this.spinner.hide('loading_list');
     });
-    // this.userService.getAll(PRODUCT_API).subscribe(data => {
-    // });
   }
 
   onSearchChange(value) {
