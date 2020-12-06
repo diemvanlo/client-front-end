@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6" *ngFor="let property of propertiesGetAll">
+      <div class="col-lg-4 col-md-6" *ngFor="let property of properties | slice: (pageNews-1) * pageSize : pageNews * pageSize">
         <div class="property-item">
           <div class="pi-pic set-bg"
                [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image != null ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
@@ -64,7 +64,7 @@
           </div>
           <div class="pi-text">
             <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">{{property.sourceAsMap.loaiHinh}} VNĐ<span>/tháng</span></div>
+            <div class="pt-price">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>
             <h5><a href="#">{{property.sourceAsMap.tenSanPham}}</a></h5>
             <p><span class="icon_pin_alt"></span> {{property.sourceAsMap.diaChi}}</p>
             <ul>

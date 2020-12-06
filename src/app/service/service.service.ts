@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import * as jQuery from 'jquery';
 import {HttpClient, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 let $: any = jQuery;
 
@@ -24,7 +25,8 @@ export class ServiceService {
   }
 
   searchAllColumn(url, term: any,): Observable<any> {
-    return this.http.post(url + '/searchAllColumn2', {searchString: term});
+    console.log(term);
+    return this.http.post(url + '/searchAllColumn2', {searchString: term}).pipe();
   }
 
   post(url, term: any,): Observable<any> {
