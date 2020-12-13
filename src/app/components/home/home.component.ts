@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //Load Init
     this.getProductSlide();
-    this.getProductFeatured();
-    this.getProductFeatured2();
+    // this.getProductFeatured();
+    // this.getProductFeatured2();
   }
 
   getProductSlide(){
@@ -38,20 +38,20 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getProductFeatured(){
-    this.userServce.getAll(PRODUCT_API).subscribe(data => {
-      this.properties_all = data.filter((value,i) => i <= 5);
-      this.spinner.hide('homes');
-      this.reloadService.reloadJs();
-    });
-  }
+  // getProductFeatured(){
+  //   this.userServce.getAll(PRODUCT_API).subscribe(data => {
+  //     this.properties_all = data.filter((value,i) => i <= 5);
+  //     this.spinner.hide('homes');
+  //     this.reloadService.reloadJs();
+  //   });
+  // }
 
-  getProductFeatured2(){
-    this.userServce.getAll(PRODUCT_API).subscribe(data => {
-      this.properties_4 = data.filter((value,i) => i <= 3);
-      this.spinner.hide('homes');
-      this.reloadService.reloadJs();
-    });
-  }
+  // getProductFeatured2(){
+  //   this.userServce.getAll(PRODUCT_API).subscribe(data => {
+  //     this.properties_4 = data.filter((value,i) => i <= 3);
+  //     this.spinner.hide('homes');
+  //     this.reloadService.reloadJs();
+  //   });
+  // }
 
 }
