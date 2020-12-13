@@ -33,7 +33,15 @@
           <div class="pi-pic set-bg" [ngStyle]="{'background-image': 'url(' + property.images + ')'}">
             <div class="label">Cho thuê</div>
           </div>
-          <div class="pi-text">
+          <div class="pi-text" style="position: relative">
+            <ngx-spinner
+              bdColor="rgba(74,74,74,0.12)"
+              size="medium"
+              color="#8c33b4"
+              type="ball-scale-multiple" [fullScreen]="false" [name]="'loading_projects'"
+            >
+              <p style="font-size: 20px; color: black">{{"Loading..." | translate}}</p>
+            </ngx-spinner>
             <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
             <div class="pt-price">$ {{property.giaTien}}<span>/tháng</span></div>
             <h5><a href="#">{{property.tenSanPham}}</a></h5>

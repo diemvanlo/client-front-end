@@ -33,7 +33,7 @@
             <div class="pi-text">
               <h5>Nguyễn Hữu Tài</h5>
               <span>96 Âu Cơ, Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng</span>
-              <p>Làm việc từ 5/2019</p>
+              <p>Số bài đăng: 10/10</p>
             </div>
           </div>
         </div>
@@ -48,11 +48,79 @@
         </div>
         <div class="col-lg-4">
           <div class="profile-agent-newslatter">
-            <h5>Gửi tin nhắn cho BDS team</h5>
-            <form action="#">
-              <input type="text" placeholder="Email">
-              <button type="submit"><i class="fa fa-send"></i></button>
-            </form>
+            <h5>Mua lượt đăng bài</h5>
+<!--            <a routerLink="/" class="buy-post" data-toggle="modal" data-target="#exampleModalLong">Chọn gói</a>-->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="buy-post" data-toggle="modal" data-target="#exampleModalLong">
+              Chọn gói
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Chọn gói bài đăng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="pricing">
+                      <input type="radio" name="pricing" id="intro"/>
+                      <label for="intro" class="pricing-check"></label>
+                      <div class="pricing-content">
+                        <div class="pricing-info">
+                          <h3 class="pricing-name">Gói 1</h3>
+                          <span class="pricing-saving">Sale %20</span>
+                        </div>
+                        <div class="pricing-price">
+                          <span class="pricing-money">$19</span>
+                          <span class="pricing-time">/ 10 bài</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pricing">
+                      <input type="radio" name="pricing" id="basic"/>
+                      <label for="basic" class="pricing-check"></label>
+                      <div class="pricing-content">
+                        <div class="pricing-info">
+                          <h3 class="pricing-name">Gói 2</h3>
+                          <span class="pricing-saving">Sale %20</span>
+                        </div>
+                        <div class="pricing-price">
+                          <span class="pricing-money">$39</span>
+                          <span class="pricing-time">/ 20 bài</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pricing">
+                      <input type="radio" name="pricing" id="pro"/>
+                      <label for="pro" class="pricing-check"></label>
+                      <div class="pricing-content">
+                        <div class="pricing-info">
+                          <h3 class="pricing-name">Gói 3</h3>
+                          <span class="pricing-saving">Sale %20</span>
+                        </div>
+                        <div class="pricing-price">
+                          <span class="pricing-money">$59</span>
+                          <span class="pricing-time">/ 50 bài</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" style="background: #00c8a0; border: none" [(ngModel)]="number" (click)="paypal()">Mua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            <form action="#">-->
+<!--              <input type="text" placeholder="Email">-->
+<!--              <button type="submit"><i class="fa fa-send"></i></button>-->
+<!--            </form>-->
           </div>
         </div>
       </div>

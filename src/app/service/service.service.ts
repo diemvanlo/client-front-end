@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import * as jQuery from 'jquery';
-import {HttpClient, HttpRequest} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpRequest} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 let $: any = jQuery;
 
@@ -14,7 +15,7 @@ export class ServiceService {
   }
 
   getAll(url): Observable<any> {
-    return this.http.get<any>(url + "/");
+    return this.http.get<any>(url + '/');
   }
 
   save(url, depart: any): Observable<any> {
@@ -24,7 +25,12 @@ export class ServiceService {
   }
 
   searchAllColumn(url, term: any,): Observable<any> {
-    return this.http.post(url + '/searchAllColumn', {searchString: term});
+    console.log(term);
+    return this.http.post(url + '/searchAllColumn2', {searchString: term}).pipe();
+  }
+
+  post(url, term: any,): Observable<any> {
+    return this.http.post(url, {searchString: term});
   }
 
   get(url, id: any) {
@@ -32,7 +38,7 @@ export class ServiceService {
   }
 
   delete(url, id: any): Observable<any> {
-    this.showNotification('Thông báo', "Delete successfully!");
+    this.showNotification('Thông báo', 'Delete successfully!');
     return this.http.post(url + '/delete', id);
   }
 

@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpsServiceService} from '../service/https-service.service';
 import {environment} from '../../environments/environment.prod';
-import * as $ from "jquery";
+import * as $ from 'jquery';
+import {MatDialogRef} from '@angular/material';
 
 declare const PANOLENS: any;
 declare const THREE: any;
@@ -40,6 +41,8 @@ export class Vr360ImageComponent implements OnInit, OnDestroy {
       this.imageList.forEach((image, index) => {
         this.setHotPot(index);
       });
+      this.viewer.setPanorama(this.imageList[0].panorama);
+      this.viewer.onWindowResize(this.viewer.container._width, this.viewer.container._height);
       console.log(data);
       console.log('loading complete');
     });

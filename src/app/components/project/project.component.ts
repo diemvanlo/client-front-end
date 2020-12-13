@@ -2,6 +2,7 @@ import {Component, OnInit, Pipe} from '@angular/core';
 import {ServiceService} from "../../service/service.service";
 import {HttpsServiceService} from "../../service/https-service.service";
 import {Router} from "@angular/router";
+import {NgxSpinnerService} from 'ngx-spinner';
 
 declare var $: any;
 
@@ -18,13 +19,17 @@ export class ProjectComponent implements OnInit {
 
   public projects: Array<any>;
   public products: Array<any>;
+  pageNews = 1;
+  pageSize = 6;
 
-  constructor(private userService: ServiceService, public router: Router) {
+  constructor(private userService: ServiceService, public router: Router, private spinner: NgxSpinnerService) {
+    this.spinner.show('loading_projects');
   }
 
   ngOnInit(): void {
     this.userService.getAll(PROJECT_API).subscribe(data => {
       this.projects = data;
+      this.spinner.hide('loading_projects');
     })
   }
 

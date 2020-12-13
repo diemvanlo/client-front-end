@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpsServiceService} from '../../service/https-service.service';
 import {environment} from '../../../environments/environment.prod';
 import {Router} from '@angular/router';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 const NEWS_API = environment.apiEndpoint + '/api/news';
 @Component({
@@ -12,13 +13,15 @@ const NEWS_API = environment.apiEndpoint + '/api/news';
 export class NewsListComponent implements OnInit {
   public newsList: Array<any>;
 
-  constructor(private httpService: HttpsServiceService, public router: Router) {
+  constructor(private httpService: HttpsServiceService, public router: Router, private spinner: NgxSpinnerService) {
+    this.spinner.show('loading_list');
   }
 
   ngOnInit(): void {
     this.httpService.getAll(NEWS_API).subscribe(data => {
       console.log(data);
       this.newsList = data;
+      this.spinner.hide('loading_list');
     });
   }
   preview(id: string) {
