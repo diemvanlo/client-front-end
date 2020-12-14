@@ -29,4 +29,5 @@ export class NewsListComponent implements OnInit {
     this.router.navigate(['/news-detail'], {queryParams: {id: id}});
 
   }
+
 }
