@@ -5,6 +5,8 @@ import {StorageService} from '../../auth/storage.service';
 import {Router} from '@angular/router';
 import {HttpsServiceService} from '../../service/https-service.service';
 import {NotificationService} from '../../service/notification.service';
+import {MatDialog} from '@angular/material';
+import {ResetpasswordFormComponent} from '../resetpassword-form/resetpassword-form.component';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,7 @@ export class LoginComponent implements OnInit {
   private loginInfo: LoginInfo;
   isAdmin = false;
 
-  constructor(private notification: NotificationService, private authService: AuthService, private tokenstorage: StorageService, private router: Router) {
+  constructor(private notification: NotificationService, private authService: AuthService, private tokenstorage: StorageService, private router: Router, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -58,4 +60,14 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(ResetpasswordFormComponent, {
+  //     width: '850px',
+  //     height: '850px',
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.ngOnInit();
+  //   });
+  // }
 }

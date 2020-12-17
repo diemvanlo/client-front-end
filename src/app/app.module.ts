@@ -34,6 +34,8 @@ import { ChatFriendListComponent } from './components/chat-friend-list/chat-frie
 import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
 import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import { PaymentComponent } from './components/payment/payment.component';
+import {ResetpasswordComponent} from './components/resetpassword/resetpassword.component';
+
 
 
 // import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
@@ -65,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     Vr360ImageComponent,
     ChatFriendListComponent,
     PaymentComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     DemoMaterialModule,

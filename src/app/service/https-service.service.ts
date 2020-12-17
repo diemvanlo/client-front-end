@@ -14,6 +14,11 @@ export class HttpsServiceService {
   constructor(private http: HttpClient) {
   }
 
+  postReq(url, object): Observable<any> {
+    const req = new HttpRequest('POST', url, object);
+    this.showNotification('Thông báo', 'active sucsfully!');
+    return this.http.request(req);
+  }
   getAll(url): Observable<any> {
     // console.log(url);
     return this.http.get<any>(url + '/');
@@ -27,6 +32,9 @@ export class HttpsServiceService {
   save(url, model: any,): Observable<any> {
     const req = new HttpRequest('POST', url + '/save', model);
     return this.http.request(req);
+  }
+  gettoken(url): Observable<any>{
+    return this.http.get<any>(url+'/reset_password')
   }
 
   searchAllColumn(url, term: any,): Observable<any> {
