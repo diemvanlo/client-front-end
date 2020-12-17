@@ -70,13 +70,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" *ngIf="property.id">
               <div class="pd-title">
-                <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
                 <div class="label">Cho thuê</div>
-                <div class="pt-price">VNĐ 289.0<span>/tháng</span></div>
-                <h3>Golden Land city</h3>
-                <p><span class="icon_pin_alt"></span> 3 Middle Winchendon Rd, Rindge, NH 03463</p>
+                <div class="pt-price">{{property.giaTien}} VNĐ<span>/tháng</span></div>
+                <h3>{{property.tenSanPham}}</h3>
+                <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
               </div>
             </div>
 

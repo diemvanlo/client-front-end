@@ -40,13 +40,28 @@ export class ListPropertiesComponent implements OnInit {
   getAll(){
     this.userService.getAll(PRODUCT_API).subscribe(data => {
       this.propertiesGetAll = data.hits.hits;
-      console.log(data.hits.hits)
     })
+    this.getProductByProject();
+  }
+
+  getProductByProject(){
+    if (this.route.snapshot.queryParamMap.get('id') === '') {
+      this.userService.getAll(PRODUCT_API).subscribe(data => {
+        this.properties = data;
+      })
+    } else (
+      this.userService.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
+        this.properties = data;
+      })
+    )
+  }
+
+  previewDetailProduct(id: string){
+    this.router.navigate(['/list-product/view-detail-product/'], {queryParams: {id: id}});
   }
 
   searchAllColumn(){
     this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
-      console.log(data.hits.hits);
       this.properties = data.hits.hits;
       this.spinner.hide('loading_list');
     });
@@ -54,7 +69,6 @@ export class ListPropertiesComponent implements OnInit {
 
   onSearchChange(value) {
     this.userService.searchAllColumn(PRODUCT_API, value).subscribe(data => {
-      // console.log(data.hits.hits);
       this.properties = data.hits.hits;
     });
   }
