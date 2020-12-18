@@ -28,6 +28,8 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'property/list-properties-for-sale', component: PropertySaleComponent},
   {path: 'property/list-properties-for-rent', component: PropertyRentComponent},
   {path: 'project/view-product', component: ListPropertiesComponent},
+  {path: 'list-product/view-detail-product', component: PropertyComponent},
+  {path: 'list-agent/view-detail-agent', component: PropertiesComponent},
   {path: 'project', component: ProjectComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},

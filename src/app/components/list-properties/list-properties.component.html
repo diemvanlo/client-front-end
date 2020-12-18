@@ -63,9 +63,9 @@
             <div class="label">Rao bán</div>
           </div>
           <div class="pi-text">
-            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>
-            <h5><a href="#">{{property.sourceAsMap.tenSanPham}}</a></h5>
+<!--            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+            <div class="pt-price" (click)="previewDetailProduct(property.id)">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>
+            <h5><a routerLink="/">{{property.sourceAsMap.tenSanPham}}</a></h5>
             <p><span class="icon_pin_alt"></span> {{property.sourceAsMap.diaChi}}</p>
             <ul>
               <li><i class="fa fa-object-group"></i> 2, 283</li>

@@ -20,7 +20,7 @@
 <!-- Profile Section Begin -->
 <section class="profile-section spad">
   <div class="container">
-    <div class="profile-agent-content">
+    <div class="profile-agent-content" *ngIf="agent.id">
       <div class="row">
         <div class="col-lg-4">
           <div class="profile-agent-info">
@@ -31,7 +31,7 @@
               </div>
             </div>
             <div class="pi-text">
-              <h5>Nguyễn Hữu Tài</h5>
+              <h5>{{agent.user.fullName}}</h5>
               <span>96 Âu Cơ, Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng</span>
               <p>Số bài đăng: 10/10</p>
             </div>
@@ -41,8 +41,8 @@
           <div class="profile-agent-widget">
             <ul>
               <li>Bất động sản <span>215</span></li>
-              <li>Email <span>dovanliem09102014@gmai.com</span></li>
-              <li>Số điện thoại <span>123-455-688</span></li>
+              <li>Email <span>{{agent.user.email}}</span></li>
+              <li>Số điện thoại <span>{{agent.user.phone}}</span></li>
             </ul>
           </div>
         </div>

@@ -1,7 +1,14 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {HttpsServiceService} from "../../service/https-service.service";
+import {ActivatedRoute} from "@angular/router";
+import {environment} from "../../../environments/environment.prod";
+
 declare var $: any;
 declare const pano2vrPlayer: any;
 declare const pano2vrSkin: any;
+
+const PRODUCT_API = environment.apiEndpoint + '/api/product';
+const GET_PROPERTY_DETAIL_API = PRODUCT_API + '/getProductId';
 
 @Component({
   selector: 'app-property',
@@ -10,7 +17,10 @@ declare const pano2vrSkin: any;
 })
 export class PropertyComponent implements OnInit, AfterViewInit {
 
-  constructor() {
+  public property: any;
+
+  constructor(private userService: HttpsServiceService,
+              private route: ActivatedRoute) {
   }
 
   ngAfterViewInit() {
@@ -20,6 +30,12 @@ export class PropertyComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    //Load Init
+    this.getPropertyDetail()
   }
-
+  getPropertyDetail(){
+    this.userService.get(GET_PROPERTY_DETAIL_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
+      this.property = data;
+    })
+  }
 }
