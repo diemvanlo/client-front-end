@@ -5,6 +5,7 @@ import {environment} from '../../../environments/environment.prod';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, last, map, switchMap, tap} from 'rxjs/operators';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {LoadingService} from '../../service/loading.service';
 
 declare var $: any;
 
@@ -28,6 +29,7 @@ export class ListPropertiesComponent implements OnInit {
   pageSize = 3;
 
   constructor(private route: ActivatedRoute,
+              private  reloadService: LoadingService,
               private router: Router, private userService: ServiceService, private spinner: NgxSpinnerService) {
     this.spinner.show('loading_list');
   }
@@ -58,6 +60,7 @@ export class ListPropertiesComponent implements OnInit {
         this.spinner.hide('loading_list');
       })
     );
+    this.reloadService.reloadJs();
   }
 
   previewDetailProduct(id: string) {
@@ -70,9 +73,10 @@ export class ListPropertiesComponent implements OnInit {
 
   onSearchChange(value) {
     this.userService.searchAllColumn(PRODUCT_API, value).subscribe(data => {
-      this.properties = []
+      this.properties = [];
       data.hits.hits.map((item, idx) => {
-        this.properties.push(item.sourceAsMap)
+        this.properties.push(item.sourceAsMap);
+        this.reloadService.reloadJs();
       });
     });
   }
@@ -88,4 +92,7 @@ export class ListPropertiesComponent implements OnInit {
       tap(() => this.searching = false)
     );
 
+  onPageChange() {
+    this.reloadService.reloadJs();
+  }
 }

@@ -82,6 +82,7 @@
 <!--      </div>-->
     </div>
     <ngb-pagination *ngIf="properties"
+                    (pageChange)="onPageChange()"
                     [(page)]="pageNews"
                     [pageSize]="pageSize"
                     [collectionSize]="properties.length"></ngb-pagination>

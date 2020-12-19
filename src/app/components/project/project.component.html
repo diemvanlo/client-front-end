@@ -51,6 +51,7 @@
     <ngb-pagination *ngIf="projects"
                     [(page)]="pageNews"
                     [pageSize]="pageSize"
+                    (pageChange)="onPageChange()"
                     [collectionSize]="projects.length"></ngb-pagination>
   </div>
 
