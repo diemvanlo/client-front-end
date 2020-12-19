@@ -40,8 +40,8 @@
               <input type="text" name="phone" [(ngModel)]="registerUser.phone" placeholder="{{'Phone Number'|translate}}">
             </div>
           </form>
-<!--          <ckeditor [(ngModel)]="registerUser.content" [editor]="Editor" data="<p>Hello, world!</p>"-->
-<!--                    (ready)="onReady($event)" name="contentEditor"></ckeditor>-->
+          <ckeditor [(ngModel)]="registerUser.content" [editor]="Editor" data="<p>Hello, world!</p>"
+                    (ready)="onReady($event)" name="contentEditor"></ckeditor>
           <div class="col-md-12 pb-5">
             <div class="custom-file">
               <input type="file" (change)="selectFile($event,0)" class="custom-file-input" id="validatedCustomFile"
