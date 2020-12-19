@@ -38,24 +38,26 @@ export class ListPropertiesComponent implements OnInit {
   }
 
   getAll() {
-    this.getProductByProject()
+    this.getProductByProject();
   }
 
   getProductByProject() {
     console.log(this.route.snapshot.queryParamMap.get('id'))
     if (this.route.snapshot.queryParamMap.get('id') === null) {
       this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
-        this.properties = []
+        this.properties = [];
         data.hits.hits.map((item, idx) => {
           this.properties.push(item.sourceAsMap)
-        })
+          this.spinner.hide('loading_list');
+        });
         console.log(this.properties)
       });
     } else (
       this.userService.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
         this.properties = data;
+        this.spinner.hide('loading_list');
       })
-    )
+    );
   }
 
   previewDetailProduct(id: string) {
@@ -71,7 +73,7 @@ export class ListPropertiesComponent implements OnInit {
       this.properties = []
       data.hits.hits.map((item, idx) => {
         this.properties.push(item.sourceAsMap)
-      })
+      });
     });
   }
 

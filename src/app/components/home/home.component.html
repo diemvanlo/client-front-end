@@ -227,7 +227,9 @@
       </div>
     </div>
     <div class="row property-filter">
+
       <div class="col-lg-4 col-md-6 mix all" *ngFor="let item of products">
+
         <div class="property-item">
           <div class="pi-pic set-bg" [attr.data-setbg]="item.image" (click)="previewDetailProduct(item.id)">
             <div class="label">{{'For sale'|translate}}</div>
@@ -448,6 +450,7 @@
 <section class="feature-property-section spad">
   <div class="container">
     <div class="row">
+
       <div class="col-lg-4 p-0">
         <div class="feature-property-left">
           <div class="section-title">
@@ -460,6 +463,14 @@
         </div>
       </div>
       <div class="col-lg-8 p-0">
+        <ngx-spinner
+          bdColor="rgba(0, 0, 0, 0.8)"
+          size="medium"
+          color="#fff"
+          type="ball-zig-zag-deflect" [fullScreen]="false" [name]="'homes'"
+        >
+          <p style="font-size: 20px; color: black"></p>
+        </ngx-spinner>
         <div class="fp-slider owl-carousel">
           <div class="fp-item set-bg" *ngFor="let item of properties" [attr.data-setbg]="item.image">
             <div class="fp-text">

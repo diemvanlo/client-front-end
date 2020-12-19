@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   getAllProject(){
     this.userServce.getAll(PROJECT_API).subscribe(data => {
       this.projects = data.filter((value,i) => i <= 5);
-    })
+    });
     this.getProductByProject();
   }
 
@@ -56,12 +56,13 @@ export class HomeComponent implements OnInit {
     if (this.route.snapshot.queryParamMap.get('id') === '') {
       this.userServce.getAll(PRODUCT_API).subscribe(data => {
         this.properties = data;
-      })
+        this.spinner.hide('homes');
+      });
     } else (
       this.userServce.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
         this.properties = data;
       })
-    )
+    );
   }
 
   // getProductByProject(idProduct){
@@ -73,7 +74,7 @@ export class HomeComponent implements OnInit {
     this.userServce.getAll(PRODUCT_API).subscribe(data => {
       this.products = data.filter((value,i) => i <= 6);
       this.reloadService.reloadJs();
-    })
+    });
   }
 
   privew(id: string) {
