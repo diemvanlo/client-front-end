@@ -47,6 +47,7 @@ export class ListPropertiesComponent implements OnInit {
 
   request() {
     this.requestSource.next();
+
   }
 
   searchAllColumn() {
