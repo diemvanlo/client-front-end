@@ -14,6 +14,7 @@ import {NewsDetailComponent} from "../../components/news-detail/news-detail.comp
 import {RegisterComponent} from '../../components/register/register.component';
 import {LoginComponent} from '../../components/login/login.component';
 import {CodeSocketComponent} from '../../components/code-socket/code-socket.component';
+import {ResetpasswordComponent} from '../../components/resetpassword/resetpassword.component';
 
 export const AdminLayoutRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -34,4 +35,5 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'chat-demo', component: CodeSocketComponent},
+  {path: 'reset_password', component: ResetpasswordComponent},
 ];
