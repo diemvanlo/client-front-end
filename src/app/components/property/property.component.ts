@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {HttpsServiceService} from "../../service/https-service.service";
-import {ActivatedRoute} from "@angular/router";
-import {environment} from "../../../environments/environment.prod";
+import {AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {HttpsServiceService} from '../../service/https-service.service';
+import {ActivatedRoute} from '@angular/router';
+import {environment} from '../../../environments/environment.prod';
 
 declare var $: any;
 declare const pano2vrPlayer: any;
@@ -18,9 +18,13 @@ const GET_PROPERTY_DETAIL_API = PRODUCT_API + '/getProductId';
 export class PropertyComponent implements OnInit, AfterViewInit {
 
   public property: any;
+  public htmlTemplate: any;
+  htmlContent: string;
+  @ViewChild('container', {read: ViewContainerRef}) view: ViewContainerRef;
 
   constructor(private userService: HttpsServiceService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,) {
+    setTimeout(() => this.htmlContent = (this.view.element.nativeElement as HTMLElement).innerHTML);
   }
 
   ngAfterViewInit() {
@@ -31,13 +35,16 @@ export class PropertyComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     //Load Init
-    this.getPropertyDetail()
+    this.getPropertyDetail();
   }
 
-  getPropertyDetail(){
+  getPropertyDetail() {
     this.userService.get(GET_PROPERTY_DETAIL_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
+      console.log(data);
       this.property = data;
-    })
-    window.scroll(0,0)
+      this.htmlTemplate = data.moTa;
+      setTimeout(() => this.htmlTemplate = (this.view.element.nativeElement as HTMLElement).innerHTML);
+    });
+    window.scroll(0, 0);
   }
 }

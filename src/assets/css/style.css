@@ -3041,7 +3041,6 @@ li .richText-btn[data-command=toggleCode] {
   Blog Details
 -----------------------*/
 .blog-details-section {
-  padding-top: 80px;
   padding-bottom: 60px;
 }
 
@@ -3242,7 +3241,7 @@ li .richText-btn[data-command=toggleCode] {
   Blog Hero
 -----------------------*/
 .blog-hero-section {
-  height: 640px;
+  height: 340px;
   display: flex;
   align-items: center;
   text-align: center;

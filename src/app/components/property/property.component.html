@@ -160,10 +160,6 @@
                   </div>
                 </div>
                 <div class="tab-pane" id="tabs-2" role="tabpanel">
-                  <div class="tab-desc">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolor itaque facere consequatur, dignissimos minus adipisci ipsam repudiandae nisi illum provident, natus quidem vero? Quaerat ducimus sequi praesentium commodi, consectetur corporis eos sit perspiciatis, quae sed officia error, iure quasi.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolor itaque facere consequatur, dignissimos minus adipisci ipsam repudiandae nisi illum provident, natus quidem vero? Quaerat ducimus sequi praesentium commodi, consectetur corporis eos sit perspiciatis, quae sed officia error, iure quasi.</p>
-                  </div>
                 </div>
                 <div class="tab-pane" id="tabs-3" role="tabpanel">
                   <div class="tab-details">
@@ -226,9 +222,10 @@
           </div>
           <div class="pd-widget">
             <h4>{{'View All'|translate}}</h4>
-            <img src="assets/img/property/details/floor-plan.jpg" alt="">
+            <div class="container" #container>
+              <div [innerHTML]=htmlTemplate></div>
+            </div>
           </div>
-
           <div class="pd-widget">
             <h4>{{'Location on map'|translate}}</h4>
             <div class="map">
@@ -425,33 +422,8 @@
               </div>
             </div>
           </div>
-          <div class="single-sidebar">
-            <div class="section-title sidebar-title">
-              <h5>mortgage calculator</h5>
-            </div>
-            <form action="#" class="calculator-form">
-              <div class="filter-input">
-                <p>Sale Price</p>
-                <input type="text" placeholder="VNĐ">
-              </div>
-              <div class="filter-input">
-                <p>Precent Down</p>
-                <input type="text" placeholder="VNĐ">
-              </div>
-              <div class="filter-input">
-                <p>Term(year)</p>
-                <input type="text" placeholder="Year">
-              </div>
-              <div class="filter-input">
-                <p>Interest Rate in %</p>
-                <input type="text" placeholder="%">
-              </div>
-              <button type="submit" class="site-btn">Calculate</button>
-            </form>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Property Details Section End -->
