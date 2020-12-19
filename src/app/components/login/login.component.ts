@@ -73,8 +73,8 @@ export class LoginComponent implements OnInit {
   // }
   resetpassword() {
     const dialogRef = this.dialog.open(SendemailComponent, {
-      width: '550px',
-      height: '650px',
+      width: '650px',
+      height: '350px',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
