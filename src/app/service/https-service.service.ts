@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpRequest} from '@angular/common/http';
 import * as jQuery from 'jquery';
 import 'bootstrap-notify';
+import {any} from 'codelyzer/util/function';
 
 let $: any = jQuery;
 
@@ -16,7 +17,7 @@ export class HttpsServiceService {
 
   postReq(url, object): Observable<any> {
     const req = new HttpRequest('POST', url, object);
-    this.showNotification('Thông báo', 'active sucsfully!');
+    this.showNotification('Thông báo', 'sucsfully!');
     return this.http.request(req);
   }
   getAll(url): Observable<any> {
@@ -33,10 +34,11 @@ export class HttpsServiceService {
     const req = new HttpRequest('POST', url + '/save', model);
     return this.http.request(req);
   }
-  gettoken(url): Observable<any>{
-    return this.http.get<any>(url+'/reset_password')
+  sendemail(url, email:any): Observable<any> {
+    const req = new HttpRequest('POST', url, email);
+    this.showNotification('Thông báo', 'send email sucsfully!');
+    return this.http.request(req);
   }
-
   searchAllColumn(url, term: any,): Observable<any> {
     // this.showNotification('Thông báo', "Delete successfully!");
     return this.http.post(url + '/searchAllColumn', {searchString: term});

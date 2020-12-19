@@ -6,7 +6,8 @@ import {Router} from '@angular/router';
 import {HttpsServiceService} from '../../service/https-service.service';
 import {NotificationService} from '../../service/notification.service';
 import {MatDialog} from '@angular/material';
-import {ResetpasswordFormComponent} from '../resetpassword-form/resetpassword-form.component';
+import {SendemailComponent} from '../sendemail/sendemail.component';
+
 
 @Component({
   selector: 'app-login',
@@ -70,4 +71,14 @@ export class LoginComponent implements OnInit {
   //     this.ngOnInit();
   //   });
   // }
+  resetpassword() {
+    const dialogRef = this.dialog.open(SendemailComponent, {
+      width: '550px',
+      height: '650px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      this.ngOnInit();
+    });
+  }
 }

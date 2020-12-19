@@ -35,7 +35,9 @@ import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
 import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import { PaymentComponent } from './components/payment/payment.component';
 import {ResetpasswordComponent} from './components/resetpassword/resetpassword.component';
-
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire';
+import { SendemailComponent } from './components/sendemail/sendemail.component';
 
 
 // import { Vr360ImageComponent } from './vr360-image/vr360-image.component';
@@ -68,6 +70,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ChatFriendListComponent,
     PaymentComponent,
     ResetpasswordComponent,
+    SendemailComponent,
   ],
   imports: [
     DemoMaterialModule,
@@ -85,6 +88,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     NgxSpinnerModule,
     NgbTypeaheadModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyA7aApxGxKvRCJGlyuP2ZUjQEPlhhZZmvk",
+      authDomain: "demofxte.firebaseapp.com",
+      databaseURL: "https://demofxte.firebaseio.com",
+      projectId: "demofxte",
+      storageBucket: "demofxte.appspot.com",
+      messagingSenderId: "316683732284",
+      appId: "1:316683732284:web:94afe90ad58d5d0c0aca39"
+    }),
+    AngularFireStorageModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
