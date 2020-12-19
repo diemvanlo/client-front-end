@@ -72,8 +72,8 @@
           <div class="row">
             <div class="col-lg-6" *ngIf="property.id">
               <div class="pd-title">
-                <div class="label">Cho thuê</div>
-                <div class="pt-price">{{property.giaTien | currency:"VND":"symbol"}} VNĐ<span>/tháng</span></div>
+                <div class="label">{{'Rent'|translate}}</div>
+                <div class="pt-price">{{property.giaTien | currency:"VND":"symbol"}} VNĐ<span>/{{'month'|translate}}</span></div>
                 <h3>{{property.tenSanPham}}</h3>
                 <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
               </div>
@@ -93,13 +93,13 @@
             <div class="tab-board">
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Tổng quát</a>
+                  <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">{{'General'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Mô tả</a>
+                  <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">{{'Description'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Tiện nghi</a>
+                  <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">{{'Convenient'|translate}}</a>
                 </li>
               </ul><!-- Tab panes -->
               <div class="tab-content">
@@ -107,23 +107,23 @@
                   <div class="tab-details">
                     <ul class="left-table">
                       <li>
-                        <span class="type-name">Loại hình</span>
-                        <span class="type-value">Nhà</span>
+                        <span class="type-name">{{'Type'|translate}}</span>
+                        <span class="type-value">{{'House'|translate}}</span>
                       </li>
                       <li>
-                        <span class="type-name">Mã số</span>
+                        <span class="type-name">{{'Number'|translate}}</span>
                         <span class="type-value">#219</span>
                       </li>
                       <li>
-                        <span class="type-name">Giá</span>
-                        <span class="type-value">VNĐ 289.0/tháng</span>
+                        <span class="type-name">{{'Price'|translate}}</span>
+                        <span class="type-value">VNĐ 289.0/{{'month'|translate}}</span>
                       </li>
                       <li>
-                        <span class="type-name">Xây dựng</span>
+                        <span class="type-name">{{'Build'|translate}}</span>
                         <span class="type-value">2019</span>
                       </li>
                       <li>
-                        <span class="type-name">Loại hợp đồng</span>
+                        <span class="type-name">{{'Type of contract'|translate}}</span>
                         <span class="type-value">Rent</span>
                       </li>
                       <li>
@@ -133,19 +133,19 @@
                     </ul>
                     <ul class="right-table">
                       <li>
-                        <span class="type-name">Diện tích</span>
+                        <span class="type-name">{{'Area'|translate}}</span>
                         <span class="type-value">1200 sqft</span>
                       </li>
                       <li>
-                        <span class="type-name">Số phòng</span>
+                        <span class="type-name">{{'Room number'|translate}}</span>
                         <span class="type-value">9</span>
                       </li>
                       <li>
-                        <span class="type-name">Phòng tắm</span>
+                        <span class="type-name">{{'Bathroom'|translate}}</span>
                         <span class="type-value">4</span>
                       </li>
                       <li>
-                        <span class="type-name">Phòng ngủ</span>
+                        <span class="type-name"> {{'Bedroom'|translate}}</span>
                         <span class="type-value">3</span>
                       </li>
                       <li>
@@ -153,7 +153,7 @@
                         <span class="type-value">2</span>
                       </li>
                       <li>
-                        <span class="type-name">Chỗ để xe</span>
+                        <span class="type-name">{{'Parking the car'|translate}}</span>
                         <span class="type-value">2</span>
                       </li>
                     </ul>
@@ -169,23 +169,23 @@
                   <div class="tab-details">
                     <ul class="left-table">
                       <li>
-                        <span class="type-name">Loại hình</span>
-                        <span class="type-value">Nhà</span>
+                        <span class="type-name">{{'Type'|translate}}</span>
+                        <span class="type-value">{{'House'|translate}}</span>
                       </li>
                       <li>
-                        <span class="type-name">Mã số</span>
+                        <span class="type-name">{{'Number'|translate}}</span>
                         <span class="type-value">#219</span>
                       </li>
                       <li>
-                        <span class="type-name">Giá</span>
-                        <span class="type-value">VNĐ 289.0/tháng</span>
+                        <span class="type-name">{{'Price'|translate}}</span>
+                        <span class="type-value">VNĐ 289.0/{{'month'|translate}}</span>
                       </li>
                       <li>
-                        <span class="type-name">Xây dựng</span>
+                        <span class="type-name">{{'Build'|translate}}</span>
                         <span class="type-value">2019</span>
                       </li>
                       <li>
-                        <span class="type-name">Loại hợp đồng</span>
+                        <span class="type-name">{{'Type of contract'|translate}}</span>
                         <span class="type-value">Rent</span>
                       </li>
                       <li>
@@ -195,19 +195,19 @@
                     </ul>
                     <ul class="right-table">
                       <li>
-                        <span class="type-name">Diện tích</span>
+                        <span class="type-name">{{'Area'|translate}}</span>
                         <span class="type-value">1200 sqft</span>
                       </li>
                       <li>
-                        <span class="type-name">Số phòng</span>
+                        <span class="type-name">{{'Room number'|translate}}</span>
                         <span class="type-value">9</span>
                       </li>
                       <li>
-                        <span class="type-name">Phòng tắm</span>
+                        <span class="type-name">{{'Bathroom'|translate}}</span>
                         <span class="type-value">4</span>
                       </li>
                       <li>
-                        <span class="type-name">Phòng ngủ</span>
+                        <span class="type-name"> {{'Bedroom'|translate}}</span>
                         <span class="type-value">3</span>
                       </li>
                       <li>
@@ -215,7 +215,7 @@
                         <span class="type-value">2</span>
                       </li>
                       <li>
-                        <span class="type-name">Chỗ để xe</span>
+                        <span class="type-name">{{'Parking the car'|translate}}</span>
                         <span class="type-value">2</span>
                       </li>
                     </ul>
@@ -225,12 +225,12 @@
             </div>
           </div>
           <div class="pd-widget">
-            <h4>Xem chi tiết</h4>
+            <h4>{{'View All'|translate}}</h4>
             <img src="assets/img/property/details/floor-plan.jpg" alt="">
           </div>
 
           <div class="pd-widget">
-            <h4>Vị trí trên bản đồ</h4>
+            <h4>{{'Location on map'|translate}}</h4>
             <div class="map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.7838808890156!2d108.18390771470179!3d16.024762044884977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142197ef556b01b%3A0xc67894c8531ff2f5!2zMTM1IFbFqSBMxINuZywgSG_DoCBQaMOhdCwgQ-G6qW0gTOG7hywgxJDDoCBO4bq1bmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1597017904926!5m2!1svi!2s" width="600" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
@@ -297,7 +297,7 @@
 <!--            </div>-->
 <!--          </div>-->
           <div class="pd-widget">
-            <h4>02 Đánh giá</h4>
+            <h4>02 {{'Review'|translate}}</h4>
             <div class="pd-review">
               <div class="pr-item">
                 <div class="pr-avatar">
@@ -340,14 +340,14 @@
             </div>
           </div>
           <div class="pd-widget">
-            <h4>Đánh giá của bạn</h4>
+            <h4>{{'Your review'|translate}}</h4>
             <form action="#" class="review-form">
               <div class="group-input">
-                <input type="text" placeholder="Tên">
+                <input type="text" placeholder="{{'Name'|translate}}">
                 <input type="text" placeholder="Email">
-                <input type="text" placeholder="Số điện thoại">
+                <input type="text" placeholder="{{'Phone Number'|translate}}">
               </div>
-              <textarea placeholder="Lời nhận xét"></textarea>
+              <textarea placeholder="{{'Comment'|translate}}"></textarea>
               <div class="rating">
                 <span>Your Rating:</span>
                 <i class="fa fa-star"></i>
@@ -356,7 +356,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <button type="submit" class="site-btn">gửi đánh giá</button>
+              <button type="submit" class="site-btn">{{'Send'|translate}}</button>
             </form>
           </div>
         </div>
@@ -365,7 +365,7 @@
         <div class="property-sidebar">
           <div class="single-sidebar">
             <div class="section-title sidebar-title">
-              <h5>Liên hệ tư vấn</h5>
+              <h5>{{'Contact consultant'|translate}}</h5>
             </div>
             <div class="top-agent">
               <div class="ta-item">
@@ -396,31 +396,31 @@
           </div>
           <div class="single-sidebar slider-op">
             <div class="section-title sidebar-title">
-              <h5>Loại hình nổi bật</h5>
+              <h5>{{'Outstanding type'|translate}}</h5>
             </div>
             <div class="sf-slider owl-carousel">
               <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-1.jpg">
                 <div class="sf-text">
-                  <h5>Nhà</h5>
-                  <span>38 bất động sản</span>
+                  <h5>{{'House'}}</h5>
+                  <span>38 {{'real estate'|translate}}</span>
                 </div>
               </div>
               <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-2.jpg">
                 <div class="sf-text">
-                  <h5>Căn hộ</h5>
-                  <span>238 bất động sản</span>
+                  <h5>{{'Apartment'|translate}}</h5>
+                  <span>238 {{'real estate'|translate}}</span>
                 </div>
               </div>
               <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-3.jpg">
                 <div class="sf-text">
                   <h5>Villa</h5>
-                  <span>230 bất động sản</span>
+                  <span>230 {{'real estate'|translate}}</span>
                 </div>
               </div>
               <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-4.jpg">
                 <div class="sf-text">
-                  <h5>Nhà hàng</h5>
-                  <span>38 bất động sản</span>
+                  <h5>{{'Restaurant'|translate}}</h5>
+                  <span>38 {{'real estate'|translate}}</span>
                 </div>
               </div>
             </div>

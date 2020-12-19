@@ -14,23 +14,25 @@ import {HomeComponent} from '../../components/home/home.component';
 import {PropertiesComponent} from '../../components/properties/properties.component';
 import {HeaderComponent} from '../header/header.component';
 import {FooterComponent} from '../footer/footer.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 @NgModule({
   declarations: [
     HomeComponent, PropertiesComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AdminLayoutRoutes),
-    FormsModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatTooltipModule,
-    TranslateModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AdminLayoutRoutes),
+        FormsModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatTooltipModule,
+        TranslateModule,
+        NgxSpinnerModule
+    ],
 })
 export class RoutingModule {
 }

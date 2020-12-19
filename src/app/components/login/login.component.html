@@ -4,10 +4,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="breadcrumb-text">
-          <h4>Đăng nhập</h4>
+          <h4>{{'Login'|translate}}</h4>
           <div class="bt-option">
-            <a href="/"><i class="fa fa-home"></i> Trang chủ</a>
-            <span>Đăng nhập</span>
+            <a href="/"><i class="fa fa-home"></i> {{'Home'|translate}}</a>
+            <span>{{'Login'|translate}}</span>
           </div>
         </div>
       </div>
@@ -23,20 +23,17 @@
       <div class="col-lg-12">
         <div class="cf-content">
           <div class="cc-title">
-            <h4>Đăng nhập</h4>
-            <p>Điền vào biểu mẫu dưới đây nếu bạn cần liên hệ với chúng tôi để <br> tư vấn các sản phẩm bất động sản
-              hoặc
-              tất cả các vấn đề liên quan</p>
+            <h4>{{'Login'|translate}}</h4>
           </div>
           <form action="#" class="cc-form">
             <div class="group-input">
-              <input name="username" [(ngModel)]="form.username" type="text" placeholder="Tên đăng nhập">
-              <input [(ngModel)]="form.password" type="password" name="password"  placeholder="Password">
+              <input name="username" [(ngModel)]="form.username" type="text" placeholder="{{'Username'|translate}}">
+              <input [(ngModel)]="form.password" type="password" name="password"  placeholder="{{'Password'|translate}}">
             </div>
           </form>
-          <button type="submit" class="site-btn" (click)="login()">Đăng nhập</button>
+          <button type="submit" class="site-btn" (click)="login()">{{'Login'|translate}}</button>
           <br><br>
-          Nhấn vào đây nếu bạn <a style="color: #003eff" (click)="resetpassword()"> Quên mật khẩu?</a>
+           {{'Click here if'|translate}} <a style="color: #003eff" (click)="resetpassword()">{{'Forgot password ?'|translate}}</a>
         </div>
       </div>
     </div>

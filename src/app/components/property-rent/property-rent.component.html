@@ -4,11 +4,11 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="breadcrumb-text">
-          <h4>Bất động sản cho thuê</h4>
+          <h4>{{'Real estate for rent'|translate}}</h4>
           <div class="bt-option">
-            <a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a>
-            <a routerLink="/property/list-properties">Sản phẩm</a>
-            <span>Bất động sản cho thuê</span>
+            <a routerLink="/"><i class="fa fa-home"></i> {{'Home'|translate}}</a>
+            <a routerLink="/property/list-properties">{{'Product'|translate}}</a>
+            <span>{{'Real estate for rent'|translate}}</span>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title">
-          <h4>Dự án mới cập nhật</h4>
+          <h4>{{'NEW UPDATED PROJECTS'|translate}}</h4>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <div class="col-lg-4 col-md-6" *ngFor="let property of propertiesRent">
         <div class="property-item">
           <div class="pi-pic set-bg" [ngStyle]="{'background-image': 'url(' + property.images + ')'}">
-            <div class="label">Cho thuê</div>
+            <div class="label">{{'Rent'|translate}}</div>
           </div>
           <div class="pi-text" style="position: relative">
             <ngx-spinner
@@ -43,7 +43,7 @@
               <p style="font-size: 20px; color: black">{{"Loading..." | translate}}</p>
             </ngx-spinner>
             <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">$ {{property.giaTien}}<span>/tháng</span></div>
+            <div class="pt-price">$ {{property.giaTien}}<span>/{{'month'|translate}}</span></div>
             <h5><a href="#">{{property.tenSanPham}}</a></h5>
             <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
             <ul>
@@ -53,11 +53,6 @@
               <li><i class="fa fa-automobile"></i> 01</li>
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="loadmore-btn">
-          <a routerLink="/">Load more</a>
         </div>
       </div>
     </div>
