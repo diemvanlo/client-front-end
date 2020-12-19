@@ -35,37 +35,43 @@ export class ListPropertiesComponent implements OnInit {
   ngOnInit(): void {
     //Load Init
     this.getAll();
-    this.searchAllColumn();
   }
 
   getAll() {
-    this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
-      this.properties = data.hits.hits;
-      console.log(data.hits.hits);
-    });
+    this.getProductByProject()
+  }
+
+  getProductByProject() {
+    console.log(this.route.snapshot.queryParamMap.get('id'))
+    if (this.route.snapshot.queryParamMap.get('id') === null) {
+      this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
+        this.properties = []
+        data.hits.hits.map((item, idx) => {
+          this.properties.push(item.sourceAsMap)
+        })
+        console.log(this.properties)
+      });
+    } else (
+      this.userService.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
+        this.properties = data;
+      })
+    )
+  }
+
+  previewDetailProduct(id: string) {
+    this.router.navigate(['/list-product/view-detail-product/'], {queryParams: {id: id}});
   }
 
   request() {
     this.requestSource.next();
   }
 
-  searchAllColumn() {
-    // this.requestSource.switchMap(req => this.userService.searchAllColumn(PRODUCT_API, ''))
-    //   .subscribe(data => {
-    //     console.log(data.hits.hits);
-    //     this.properties = data.hits.hits;
-    //   });
-    this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
-      console.log(data);
-      this.properties = data.hits.hits;
-      this.spinner.hide('loading_list');
-    });
-  }
-
   onSearchChange(value) {
     this.userService.searchAllColumn(PRODUCT_API, value).subscribe(data => {
-      // console.log(data.hits.hits);
-      this.properties = data.hits.hits;
+      this.properties = []
+      data.hits.hits.map((item, idx) => {
+        this.properties.push(item.sourceAsMap)
+      })
     });
   }
 
@@ -80,7 +86,4 @@ export class ListPropertiesComponent implements OnInit {
       tap(() => this.searching = false)
     );
 
-  suggest() {
-
-  }
 }

@@ -47,22 +47,22 @@ export class HomeComponent implements OnInit {
 
   getAllProject(){
     this.userServce.getAll(PROJECT_API).subscribe(data => {
-      this.projects = data.filter((value,i) => i <= 7);
+      this.projects = data.filter((value,i) => i <= 5);
     })
-    // this.getProductByProject();
+    this.getProductByProject();
   }
 
-  // getProductByProject(){
-  //   if (this.route.snapshot.queryParamMap.get('id') === '') {
-  //     this.userServce.getAll(PRODUCT_API).subscribe(data => {
-  //       this.properties = data;
-  //     })
-  //   } else (
-  //     this.userServce.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
-  //       this.properties = data;
-  //     })
-  //   )
-  // }
+  getProductByProject(){
+    if (this.route.snapshot.queryParamMap.get('id') === '') {
+      this.userServce.getAll(PRODUCT_API).subscribe(data => {
+        this.properties = data;
+      })
+    } else (
+      this.userServce.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
+        this.properties = data;
+      })
+    )
+  }
 
   // getProductByProject(idProduct){
   //   let project = this.projects.filter(item => item.tenDuAn == idProduct)[0]
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
     window.scroll(0,0);
   }
 
-  previewDetailProduct(id: string){
+  previewDetailProduct(id: string) {
     this.router.navigate(['/list-product/view-detail-product/'], {queryParams: {id: id}});
   }
 
