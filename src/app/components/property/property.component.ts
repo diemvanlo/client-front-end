@@ -33,9 +33,11 @@ export class PropertyComponent implements OnInit, AfterViewInit {
     //Load Init
     this.getPropertyDetail()
   }
+
   getPropertyDetail(){
     this.userService.get(GET_PROPERTY_DETAIL_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
       this.property = data;
     })
+    window.scroll(0,0)
   }
 }

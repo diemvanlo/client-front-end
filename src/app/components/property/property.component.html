@@ -73,7 +73,7 @@
             <div class="col-lg-6" *ngIf="property.id">
               <div class="pd-title">
                 <div class="label">Cho thuê</div>
-                <div class="pt-price">{{property.giaTien}} VNĐ<span>/tháng</span></div>
+                <div class="pt-price">{{property.giaTien | currency:"VND":"symbol"}} VNĐ<span>/tháng</span></div>
                 <h3>{{property.tenSanPham}}</h3>
                 <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
               </div>

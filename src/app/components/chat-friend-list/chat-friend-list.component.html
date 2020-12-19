@@ -1,11 +1,11 @@
-<div id="ng-chat-people"
+<div style="border-radius: 8px"  id="ng-chat-people"
      [ngClass]="{'primary-outline-color': true, 'primary-background': true,'ng-chat-people-collapsed': isCollapsed}">
   <a href="javascript:void(0);" style="background-color: rgba(0,0,0,0.3) !important; padding-right: 88px; padding-bottom: 4px; padding-top: 4px" class="ng-chat-title secondary-background shadowed" (click)="onChatTitleClicked()">
-	<span style="margin-left: 23.5px; color: white;  font-weight: bold">
+	<span style="margin-left: 23.5px; color: white;  font-weight: bold; border-radius: 8px">
 			Danh Sách Chat
 		</span>
   </a>
-  <div class="ng-chat-people-actions" (click)="onFriendsListActionCancelClicked()">
+  <div style="border-radius: 8px" class="ng-chat-people-actions" (click)="onFriendsListActionCancelClicked()">
     <a href="javascript:void(0);" class="ng-chat-people-action">
       <i class="remove-icon"></i>
     </a>
@@ -23,7 +23,7 @@
 <!--          class="ng-chat-users-checkbox"-->
 <!--          (change)="onFriendsListCheckboxChange(user, $event.target.checked)"-->
 <!--          [checked]="isUserSelectedFromFriendsList(user)"/>-->
-        <div (click)="onUserClick(user)">
+        <div style="border-radius: 8px" (click)="onUserClick(user)">
           <div *ngIf="!user.user.image" class="icon-wrapper">
             <i class="user-icon"></i>
           </div>
