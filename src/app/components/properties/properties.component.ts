@@ -3,7 +3,7 @@ import { HttpsServiceService } from 'src/app/service/https-service.service';
 import { environment } from 'src/environments/environment.prod';
 import {ActivatedRoute, Router} from '@angular/router';
 
-const PAYPAL_API = 'http://localhost:8080'
+const PAYPAL_API = 'http://68.183.178.106:8080'
 const AGENT_API = environment.apiEndpoint + '/api/agent';
 const GET_AGENT_DETAIL_API = AGENT_API + '/getAgentId'
 
