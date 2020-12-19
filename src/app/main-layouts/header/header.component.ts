@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {StorageService} from '../../auth/storage.service';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -14,10 +15,13 @@ export class HeaderComponent implements OnInit {
   location: Location;
   public products: Array<any>;
 
-  constructor(location: Location, private router: Router, private route: ActivatedRoute, private token: StorageService) {
+  constructor(location: Location, private router: Router, private route: ActivatedRoute, private token: StorageService, public translate: TranslateService) {
+    translate.setDefaultLang('vn');
     this.location = location;
   }
-
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
   ngOnInit(): void {
   }
 

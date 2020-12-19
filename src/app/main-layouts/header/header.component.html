@@ -17,7 +17,7 @@
       </a>
       <li><i class="fa fa-mobile-phone"></i> 125-711-811 <span>125-668-886</span></li>
     </ul>
-    <a routerLink="/" class="hw-btn">Đăng nhập</a>
+    <a routerLink="/" class="hw-btn">{{'login' | translate}}</a>
   </div>
   <div class="om-social">
     <a routerLink="/"><i class="fa fa-facebook"></i></a>
@@ -47,10 +47,11 @@
               </a>
               <li><i class="fa fa-mobile-phone"></i> 125-711-811 <span>125-668-886</span></li>
             </ul>
-            <a *ngIf="!getTitle()" routerLink="/login" class="hw-btn">Đăng nhập</a>
-            <a *ngIf="!getTitle()" routerLink="/register" class="hw-btn ml-3">Đăng ký</a>
+            <a *ngIf="!getTitle()" routerLink="/login" class="hw-btn">{{'login' | translate}}</a>
+            <a *ngIf="!getTitle()" routerLink="/register" class="hw-btn ml-3">{{'register' | translate}}</a>
             <a *ngIf="getTitle()" routerLink="/register" class="hw-btn ml-3">{{getTitle()}}</a>
-            <a *ngIf="getTitle()" (click)="logOut()" class="hw-btn ml-3">Đăng xuất</a>
+            <a *ngIf="getTitle()" (click)="logOut()" class="hw-btn ml-3">{{'logout' | translate}}</a>
+
           </div>
         </div>
       </div>
@@ -65,23 +66,23 @@
         <div class="col-lg-9">
           <nav class="nav-menu">
             <ul>
-              <li class="active"><a routerLink="/">Trang chủ</a></li>
-              <li><a routerLink="/property/list-properties">Sản phẩm </a>
+              <li class="active"><a routerLink="/">{{ 'Home' | translate }} </a></li>
+              <li><a i18n routerLink="/property/list-properties">{{'Product' | translate}} </a>
                 <ul class="dropdown">
-                  <li><a routerLink="/property/list-properties-for-sale">Bất động sản bán</a></li>
-                  <li><a routerLink="/property/list-properties-for-rent">Bất động sản cho thuê</a></li>
-                  <li><a routerLink="/property-deltail">Chi tiết sản phẩm</a></li>
+                  <li><a routerLink="/property/list-properties-for-sale">{{'real estate for sale' | translate}}</a></li>
+                  <li><a routerLink="/property/list-properties-for-rent">{{'real estate for rent' | translate}}</a></li>
+                  <li><a routerLink="/property-deltail">{{'Product detail'| translate}}</a></li>
                 </ul>
               </li>
-              <li><a routerLink="/project">Dự án</a></li>
-              <li><a routerLink="/agent">Chuyên gia tư vấn</a>
+              <li><a routerLink="/project">{{'Project' | translate}}</a></li>
+              <li><a routerLink="/agent">{{'consultants' | translate}}</a>
                 <ul class="dropdown">
-                  <li><a routerLink="/properties">Hồ sơ chuyên gia</a></li>
+                  <li><a routerLink="/properties">{{'profile consultant' | translate}}</a></li>
                 </ul>
               </li>
-              <li><a routerLink="/about">Giới thiệu</a></li>
-              <li><a routerLink="/news-list">Tin tức</a></li>
-              <li><a routerLink="/contact">Liên lạc</a></li>
+              <li><a routerLink="/about">{{'About' | translate}}</a></li>
+              <li><a routerLink="/news-list">{{'News'| translate}}</a></li>
+              <li><a routerLink="/contact">{{'contact'|translate}}</a></li>
             </ul>
           </nav>
         </div>
@@ -90,9 +91,21 @@
             <a routerLink="/"><i class="fa fa-facebook"></i></a>
             <a routerLink="/"><i class="fa fa-twitter"></i></a>
             <a routerLink="/"><i class="fa fa-youtube-play"></i></a>
-            <a routerLink="/"><i class="fa fa-instagram"></i></a>
-            <a routerLink="/"><i class="fa fa-pinterest-p"></i></a>
+            <a (click)="switchLanguage('vn')"><img src="../../../assets/img/language/vietnam32.png" alt=""></a>
+            <a (click)="switchLanguage('en')"><img src="../../../assets/img/language/uk32.png" alt=""></a>
+
+<!--            <div class="dropdown">-->
+<!--              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                Languge-->
+<!--              </button>-->
+<!--              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--                <a class="dropdown-item" href="#">Action</a>-->
+<!--                <a class="dropdown-item" href="#">Another action</a>-->
+<!--                <a class="dropdown-item" href="#">Something else here</a>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
+
         </div>
       </div>
     </div>

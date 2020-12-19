@@ -5,6 +5,9 @@ import {StorageService} from '../../auth/storage.service';
 import {Router} from '@angular/router';
 import {HttpsServiceService} from '../../service/https-service.service';
 import {NotificationService} from '../../service/notification.service';
+import {MatDialog} from '@angular/material';
+import {SendemailComponent} from '../sendemail/sendemail.component';
+
 
 @Component({
   selector: 'app-login',
@@ -20,7 +23,7 @@ export class LoginComponent implements OnInit {
   private loginInfo: LoginInfo;
   isAdmin = false;
 
-  constructor(private notification: NotificationService, private authService: AuthService, private tokenstorage: StorageService, private router: Router) {
+  constructor(private notification: NotificationService, private authService: AuthService, private tokenstorage: StorageService, private router: Router, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -57,5 +60,25 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = true;
       }
     );
+  }
+
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(ResetpasswordFormComponent, {
+  //     width: '850px',
+  //     height: '850px',
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.ngOnInit();
+  //   });
+  // }
+  resetpassword() {
+    const dialogRef = this.dialog.open(SendemailComponent, {
+      width: '650px',
+      height: '350px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      this.ngOnInit();
+    });
   }
 }

@@ -2,7 +2,7 @@ import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {ServiceService} from '../../service/service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../../environments/environment.prod';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, last, map, switchMap, tap} from 'rxjs/operators';
 import {NgxSpinnerService} from 'ngx-spinner';
 
@@ -17,6 +17,7 @@ const GET_PRODUCT_BY_PROJECT_API = PRODUCT_API + '/getByProjectId';
   styleUrls: ['./list-properties.component.css']
 })
 export class ListPropertiesComponent implements OnInit {
+  private requestSource = new Subject<any>();
 
   DEFAULT_IMAGE = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT43JMDb6bteHLIF9_oXUXrGjaaOBSAYYMAgA&usqp=CAU';
   public properties: Array<any>;
@@ -37,31 +38,25 @@ export class ListPropertiesComponent implements OnInit {
     this.searchAllColumn();
   }
 
-  getAll(){
-    this.userService.getAll(PRODUCT_API).subscribe(data => {
-      this.propertiesGetAll = data.hits.hits;
-    })
-    this.getProductByProject();
-  }
-
-  getProductByProject(){
-    if (this.route.snapshot.queryParamMap.get('id') === '') {
-      this.userService.getAll(PRODUCT_API).subscribe(data => {
-        this.properties = data;
-      })
-    } else (
-      this.userService.get(GET_PRODUCT_BY_PROJECT_API, this.route.snapshot.queryParamMap.get('id')).subscribe(data => {
-        this.properties = data;
-      })
-    )
-  }
-
-  previewDetailProduct(id: string){
-    this.router.navigate(['/list-product/view-detail-product/'], {queryParams: {id: id}});
-  }
-
-  searchAllColumn(){
+  getAll() {
     this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
+      this.properties = data.hits.hits;
+      console.log(data.hits.hits);
+    });
+  }
+
+  request() {
+    this.requestSource.next();
+  }
+
+  searchAllColumn() {
+    // this.requestSource.switchMap(req => this.userService.searchAllColumn(PRODUCT_API, ''))
+    //   .subscribe(data => {
+    //     console.log(data.hits.hits);
+    //     this.properties = data.hits.hits;
+    //   });
+    this.userService.searchAllColumn(PRODUCT_API, '').subscribe(data => {
+      console.log(data);
       this.properties = data.hits.hits;
       this.spinner.hide('loading_list');
     });
@@ -69,6 +64,7 @@ export class ListPropertiesComponent implements OnInit {
 
   onSearchChange(value) {
     this.userService.searchAllColumn(PRODUCT_API, value).subscribe(data => {
+      // console.log(data.hits.hits);
       this.properties = data.hits.hits;
     });
   }
