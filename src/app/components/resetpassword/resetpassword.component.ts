@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpsServiceService} from '../../service/https-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NotificationService} from '../../service/notification.service';
-const USER_COUNT_API = 'http://localhost:8080/api/auth';
+import {environment} from '../../../environments/environment.prod';
+
+const USER_COUNT_API = environment.apiEndpoint + '/api/auth';
+
 @Component({
   selector: 'app-resetpassword',
   templateUrl: './resetpassword.component.html',
@@ -13,7 +16,7 @@ export class ResetpasswordComponent implements OnInit {
   formm: any;
   password: String;
   rspassword: String;
-  check:boolean=true;
+  check: boolean = true;
 
   constructor(
     private httpService: HttpsServiceService,
@@ -24,23 +27,23 @@ export class ResetpasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.token = this.router.snapshot.queryParamMap.get("token")
+    this.token = this.router.snapshot.queryParamMap.get('token');
   }
 
   resetpassword(token: String, password: String) {
     if (this.password !== this.rspassword) {
       this.notification.showNotification('Không hợp lệ', 'Mật khẩu không khớp', 'danger');
-      this.check=false;
+      this.check = false;
     }
-    if(this.password ==""){
-      this.notification.showNotification('Không hợp lệ', 'không được để trống mật khẩu', 'danger')
-      this.check=false;
+    if (this.password == '') {
+      this.notification.showNotification('Không hợp lệ', 'không được để trống mật khẩu', 'danger');
+      this.check = false;
     }
-    if(this.rspassword==""){
-      this.notification.showNotification('Không hợp lệ', 'không được để trống xác nhận mật khẩu', 'danger')
-      this.check=false;
+    if (this.rspassword == '') {
+      this.notification.showNotification('Không hợp lệ', 'không được để trống xác nhận mật khẩu', 'danger');
+      this.check = false;
     }
-    if(this.check){
+    if (this.check) {
       this.httpService.postReq(USER_COUNT_API + '/reset_password', {token: token, password: password}).subscribe(data => {
         console.log(data);
         console.log({token: token, password: password});
