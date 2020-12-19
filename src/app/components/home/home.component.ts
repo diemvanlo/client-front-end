@@ -33,18 +33,19 @@ export class HomeComponent implements OnInit {
   getProductSlide(){
     this.userServce.getAll(PRODUCT_API).subscribe(data => {
       this.properties = data.filter((value,i) => i <= 2);
+      console.log(this.properties)
       this.spinner.hide('homes');
       this.reloadService.reloadJs();
     });
   }
 
-  // getProductFeatured(){
-  //   this.userServce.getAll(PRODUCT_API).subscribe(data => {
-  //     this.properties_all = data.filter((value,i) => i <= 5);
-  //     this.spinner.hide('homes');
-  //     this.reloadService.reloadJs();
-  //   });
-  // }
+  getProductFeatured(){
+    this.userServce.getAll(PRODUCT_API).subscribe(data => {
+      this.properties_all = data.filter((value,i) => i <= 5);
+      this.spinner.hide('homes');
+      this.reloadService.reloadJs();
+    });
+  }
 
   // getProductFeatured2(){
   //   this.userServce.getAll(PRODUCT_API).subscribe(data => {

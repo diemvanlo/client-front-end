@@ -3,10 +3,11 @@ import {ServiceService} from "../../service/service.service";
 import {HttpsServiceService} from "../../service/https-service.service";
 import {Router} from "@angular/router";
 import {NgxSpinnerService} from 'ngx-spinner';
+import {environment} from "../../../environments/environment.prod";
 
 declare var $: any;
 
-const PROJECT_API = "https://safe-citadel-42709.herokuapp.com/api/project";
+const PROJECT_API = environment.apiEndpoint + "/api/project";
 const PRODUCT_API = "https://safe-citadel-42709.herokuapp.com/api/product";
 
 @Component({

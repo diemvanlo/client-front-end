@@ -12,10 +12,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="breadcrumb-text">
-          <h4>Sản phẩm</h4>
+          <h4>{{'Product'|translate}}</h4>
           <div class="bt-option">
-            <a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a>
-            <span>Sản phẩm</span>
+            <a routerLink="/"><i class="fa fa-home"></i>{{'Home'|translate}}</a>
+            <span>{{'Product'|translate}}</span>
           </div>
         </div>
       </div>
@@ -29,14 +29,14 @@
     <div class="row">
       <div class="col-lg-7">
         <div class="section-title">
-          <h4>Tìm kiếm</h4>
+          <h4>{{'Search'|translate}}</h4>
         </div>
       </div>
       <div class="col-12">
         <div class="cf-content">
           <form action="#" class="cc-form">
             <div class="group-input">
-              <input (input)="onSearchChange($event.target.value)" [ngbTypeahead]="search" [(ngModel)]="term" name="username" type="text" placeholder="Tìm kiếm">
+              <input (input)="onSearchChange($event.target.value)" [ngbTypeahead]="search" [(ngModel)]="term" name="username" type="text" placeholder="{{'Search'|translate}}">
             </div>
           </form>
         </div>
@@ -51,7 +51,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title">
-          <h4>Dự án mới cập nhật</h4>
+          <h4>{{'NEW UPDATED PROJECTS'|translate}}</h4>
         </div>
       </div>
     </div>
@@ -60,12 +60,12 @@
         <div class="property-item">
           <div class="pi-pic set-bg"
                [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image != null ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
-            <div class="label">Rao bán</div>
+            <div class="label">{{'For sale'|translate}}</div>
           </div>
           <div class="pi-text">
-            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>
-            <h5><a href="#">{{property.sourceAsMap.tenSanPham}}</a></h5>
+<!--            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+<!--            <div class="pt-price" (click)="previewDetailProduct(property.id)">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>-->
+            <h5><a routerLink="/">{{property.sourceAsMap.tenSanPham}}</a></h5>
             <p><span class="icon_pin_alt"></span> {{property.sourceAsMap.diaChi}}</p>
             <ul>
               <li><i class="fa fa-object-group"></i> 2, 283</li>
@@ -78,7 +78,7 @@
       </div>
       <div class="col-lg-12">
         <div class="loadmore-btn">
-          <a routerLink="/">Tải thêm</a>
+          <a routerLink="/">{{'Load more'|translate}}</a>
         </div>
       </div>
     </div>
