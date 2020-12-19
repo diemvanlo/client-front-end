@@ -59,14 +59,14 @@
       <div class="col-lg-4 col-md-6" *ngFor="let property of properties | slice: (pageNews-1) * pageSize : pageNews * pageSize">
         <div class="property-item">
           <div class="pi-pic set-bg"
-               [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image != null ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
+               [ngStyle]="{'background-image': 'url(' + (property.image != null ? property.image : DEFAULT_IMAGE) + ')'}">
             <div class="label">{{'For sale'|translate}}</div>
           </div>
           <div class="pi-text">
 <!--            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
-<!--            <div class="pt-price" (click)="previewDetailProduct(property.id)">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>-->
-            <h5><a routerLink="/">{{property.sourceAsMap.tenSanPham}}</a></h5>
-            <p><span class="icon_pin_alt"></span> {{property.sourceAsMap.diaChi}}</p>
+            <div class="pt-price" (click)="previewDetailProduct(property.id)">{{property.giaTien}} VNĐ<span>/tháng</span></div>
+            <h5><a routerLink="/">{{property.tenSanPham}}</a></h5>
+            <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
             <ul>
               <li><i class="fa fa-object-group"></i> 2, 283</li>
               <li><i class="fa fa-bathtub"></i> 03</li>

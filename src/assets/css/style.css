@@ -429,7 +429,7 @@ ol {
 .hero-section {
   overflow: hidden;
   background: #ffffff;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
 }
 
 .hs-slider.owl-carousel .owl-stage-outer {
