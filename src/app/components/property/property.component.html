@@ -105,10 +105,10 @@
               <div class="tab-content">
                 <div class="tab-pane active" id="tabs-1" role="tabpanel">
                   <div class="tab-details">
-                    <ul class="left-table">
+                    <ul class="left-table" *ngIf="property.id">
                       <li>
                         <span class="type-name">{{'Type'|translate}}</span>
-                        <span class="type-value">{{'House'|translate}}</span>
+                        <span class="type-value">{{property.project.tenDuAn}}</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Number'|translate}}</span>
@@ -116,11 +116,11 @@
                       </li>
                       <li>
                         <span class="type-name">{{'Price'|translate}}</span>
-                        <span class="type-value">VNĐ 289.0/{{'month'|translate}}</span>
+                        <span class="type-value">{{property.giaTien | currency:"VND":"symbol"}} / {{'month'|translate}}</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Build'|translate}}</span>
-                        <span class="type-value">2019</span>
+                        <span class="type-value">{{property.ngayTao | date:'dd/MM/yyyy'}}</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Type of contract'|translate}}</span>
@@ -134,7 +134,7 @@
                     <ul class="right-table">
                       <li>
                         <span class="type-name">{{'Area'|translate}}</span>
-                        <span class="type-value">1200 sqft</span>
+                        <span class="type-value">{{property.dienTich}} m2</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Room number'|translate}}</span>
@@ -167,10 +167,10 @@
                 </div>
                 <div class="tab-pane" id="tabs-3" role="tabpanel">
                   <div class="tab-details">
-                    <ul class="left-table">
+                    <ul class="left-table" *ngIf="property.id">
                       <li>
                         <span class="type-name">{{'Type'|translate}}</span>
-                        <span class="type-value">{{'House'|translate}}</span>
+                        <span class="type-value">{{property.project.tenDuAn}}</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Number'|translate}}</span>
@@ -178,11 +178,11 @@
                       </li>
                       <li>
                         <span class="type-name">{{'Price'|translate}}</span>
-                        <span class="type-value">VNĐ 289.0/{{'month'|translate}}</span>
+                        <span class="type-value">{{property.giaTien | currency:"VND":"symbol"}} / {{'month'|translate}}</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Build'|translate}}</span>
-                        <span class="type-value">2019</span>
+                        <span class="type-value">{{property.ngayTao | date:'dd/MM/yyyy'}}</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Type of contract'|translate}}</span>
@@ -196,7 +196,7 @@
                     <ul class="right-table">
                       <li>
                         <span class="type-name">{{'Area'|translate}}</span>
-                        <span class="type-value">1200 sqft</span>
+                        <span class="type-value">{{property.dienTich}} m2</span>
                       </li>
                       <li>
                         <span class="type-name">{{'Room number'|translate}}</span>
