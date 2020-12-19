@@ -58,14 +58,14 @@
     <div class="row">
       <div class="col-lg-4 col-md-6" *ngFor="let property of properties | slice: (pageNews-1) * pageSize : pageNews * pageSize">
         <div class="property-item">
-          <div class="pi-pic set-bg"
+          <div class="pi-pic set-bg" (click)="previewDetailProduct(property.id)"
                [ngStyle]="{'background-image': 'url(' + (property.sourceAsMap.image != null ? property.sourceAsMap.image : DEFAULT_IMAGE) + ')'}">
             <div class="label">Rao bán</div>
           </div>
           <div class="pi-text">
 <!--            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
-            <div class="pt-price" (click)="previewDetailProduct(property.id)">{{property.sourceAsMap.giaTien}} VNĐ<span>/tháng</span></div>
-            <h5><a routerLink="/">{{property.sourceAsMap.tenSanPham}}</a></h5>
+            <div class="pt-price">{{property.sourceAsMap.giaTien | currency:"VND":"symbol"}} VNĐ<span>/tháng</span></div>
+            <h5><a routerLink="/" (click)="previewDetailProduct(property.id)">{{property.sourceAsMap.tenSanPham}}</a></h5>
             <p><span class="icon_pin_alt"></span> {{property.sourceAsMap.diaChi}}</p>
             <ul>
               <li><i class="fa fa-object-group"></i> 2, 283</li>
@@ -82,10 +82,13 @@
         </div>
       </div>
     </div>
-    <ngb-pagination *ngIf="properties"
-                    [(page)]="pageNews"
-                    [pageSize]="pageSize"
-                    [collectionSize]="properties.length"></ngb-pagination>
+
+      <ngb-pagination  *ngIf="properties"
+                      [(page)]="pageNews"
+                      [pageSize]="pageSize"
+                      [collectionSize]="properties.length"></ngb-pagination>
+
+
   </div>
 </section>
 <!-- Property Section End -->

@@ -37,6 +37,10 @@ export class ServiceService {
     return this.http.get<any>(url + '/' + id);
   }
 
+  getID(url, id: any) {
+    return this.http.get<any>(url + '/getProductId' + id);
+  }
+
   delete(url, id: any): Observable<any> {
     this.showNotification('Thông báo', 'Delete successfully!');
     return this.http.post(url + '/delete', id);

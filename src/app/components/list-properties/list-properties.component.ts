@@ -24,7 +24,7 @@ export class ListPropertiesComponent implements OnInit {
   public term: string;
   searching = false;
   pageNews = 1;
-  pageSize = 6;
+  pageSize = 3;
 
   constructor(private route: ActivatedRoute,
               private router: Router, private userService: ServiceService, private spinner: NgxSpinnerService) {
