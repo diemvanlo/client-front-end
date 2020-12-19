@@ -5,10 +5,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="breadcrumb-text">
-          <h4>Chuyên gia</h4>
+          <h4>{{'Consultants'| translate}}</h4>
           <div class="bt-option">
-            <a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a>
-            <span>Chuyên gia tư vấn</span>
+            <a routerLink="/"><i class="fa fa-home"></i> {{'Home'| translate}}</a>
+            <span>{{'Consultants'| translate}}</span>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
       <div class="col-lg-6">
         <div class="agent-search-form">
           <form action="#">
-            <input type="text" placeholder="Tìm kiếm">
+            <input type="text" placeholder="{{'Search'| translate}}">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -52,11 +52,11 @@
                 </div>
               </div>
               <ul>
-                <li>Bất động sản <span>215</span></li>
+                <li>{{'Real Estate'|translate}} <span>215</span></li>
                 <li>Email <span>{{item.user.email}}</span></li>
-                <li>Số điện thoại <span>{{item.user.phone}}</span></li>
+                <li>{{'Phone Number'| translate}} <span>{{item.user.phone}}</span></li>
               </ul>
-              <a routerLink="/" class="primary-btn" (click)="previewDetailAgent(item.id)">Xem hồ sơ</a>
+              <a routerLink="/" class="primary-btn" (click)="previewDetailAgent(item.id)">{{'View Profile'| translate}}</a>
             </div>
           </div>
         </div>

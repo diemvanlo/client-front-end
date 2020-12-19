@@ -10,8 +10,8 @@
               <div class="hc-text">
                 <h4>{{item.tenSanPham}}</h4>
                 <p><span class="icon_pin_alt"></span>{{item.diaChi}}</p>
-                <div class="label">Rao bán</div>
-                <h5>{{item.giaTien}} VNĐ<span>/tháng</span></h5>
+                <div class="label">{{'For sale'|translate}}</div>
+                <h5>{{item.giaTien}} VNĐ<span>/{{'month'|translate}}</span></h5>
               </div>
               <div class="hc-widget">
                 <ul>
@@ -32,8 +32,8 @@
               <div class="hc-text">
                 <h4>{{item.tenSanPham}}</h4>
                 <p><span class="icon_pin_alt"></span>{{item.diaChi}}</p>
-                <div class="label">Rao bán</div>
-                <h5>{{item.giaTien}} VNĐ<span>/tháng</span></h5>
+                <div class="label">{{'For sale'|translate}}</div>
+                <h5>{{item.giaTien}} VNĐ<span>/{{'month'|translate}}</span></h5>
               </div>
               <div class="hc-widget">
                 <ul>
@@ -58,20 +58,20 @@
     <div class="row">
       <div class="col-lg-7">
         <div class="section-title">
-          <h4>Tìm kiếm</h4>
+          <h4>{{'Search' | translate}}</h4>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="change-btn">
           <div class="cb-item">
             <label for="cb-rent" class="active">
-              Cho thuê
+              {{'rent' | translate}}
               <input type="radio" id="cb-rent">
             </label>
           </div>
           <div class="cb-item">
             <label for="cb-sale">
-              Rao bán
+              {{'For sale'| translate}}
               <input type="radio" id="cb-sale">
             </label>
           </div>
@@ -100,19 +100,19 @@
         </select>
         <div class="room-size-range-wrap sm-width">
           <div class="price-text">
-            <label for="roomsizeRange">Diện tích:</label>
+            <label for="roomsizeRange">{{'Acreage'| translate}}</label>
             <input type="text" id="roomsizeRange" readonly>
           </div>
           <div id="roomsize-range" class="slider"></div>
         </div>
         <div class="price-range-wrap sm-width">
           <div class="price-text">
-            <label for="priceRange">Giá:</label>
+            <label for="priceRange">{{'Price'|translate}}</label>
             <input type="text" id="priceRange" readonly>
           </div>
           <div id="price-range" class="slider"></div>
         </div>
-        <button type="button" class="search-btn sm-width">Tìm kiếm</button>
+        <button type="button" class="search-btn sm-width">{{'Search' | translate}}</button>
       </form>
     </div>
     <div class="more-option">
@@ -210,18 +210,18 @@
     <div class="row">
       <div class="col-lg-5">
         <div class="section-title">
-          <h4>Bất động sản nổi bật</h4>
+          <h4>{{'outstanding real estate'|translate}}</h4>
         </div>
       </div>
       <div class="col-lg-7">
         <div class="property-controls">
           <ul>
-            <li data-filter="all">Tất cả</li>
-            <li data-filter=".apart">Căn hộ</li>
-            <li data-filter=".house">Nhà</li>
-            <li data-filter=".office">Văn phòng</li>
-            <li data-filter=".hotel">Khách sạn</li>
-            <li data-filter=".restaurent">Nhà hàng</li>
+            <li data-filter="all">{{'All'|translate}}</li>
+            <li data-filter=".apart">{{'Apartment'|translate}}</li>
+            <li data-filter=".house">{{'House'|translate}}</li>
+            <li data-filter=".office">{{'Office'|translate}}</li>
+            <li data-filter=".hotel">{{'Hotel'|translate}}</li>
+            <li data-filter=".restaurent">{{'Restaurant'|translate}}</li>
           </ul>
         </div>
       </div>
@@ -249,11 +249,11 @@
       <div class="col-lg-4 col-md-6 mix all">
         <div class="property-item">
           <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">
-            <div class="label">Rao bán</div>
+            <div class="label">{{'For sale'|translate}}</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">289.0 VNĐ<span>/tháng</span></div>
+            <div class="pt-price">289.0 VNĐ<span>/{{'month'|translate}}</span></div>
             <h5><a routerLink="/">Vrindavan Flora</a></h5>
             <p><span class="icon_pin_alt"></span>135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
             <ul>
@@ -268,11 +268,11 @@
       <div class="col-lg-4 col-md-6 mix restaurent hotel">
         <div class="property-item">
           <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">
-            <div class="label">Rao bán</div>
+            <div class="label">{{'For sale'|translate}}</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">289.0 VNĐ<span>/tháng</span></div>
+            <div class="pt-price">289.0 VNĐ<span>/{{'month'|translate}}</span></div>
             <h5><a routerLink="/">Vrindavan Flora</a></h5>
             <p><span class="icon_pin_alt"></span>135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
             <ul>
@@ -287,7 +287,7 @@
       <div class="col-lg-4 col-md-6 mix apart office">
         <div class="property-item">
           <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">
-            <div class="label c-red">Cho thuê</div>
+            <div class="label c-red">{{'Rent'|translate}}</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
@@ -317,7 +317,7 @@
       <div class="col-lg-4 col-md-6 mix hotel restaruent">
         <div class="property-item">
           <div class="pi-pic set-bg" data-setbg="assets/img/property/property-4.jpg">
-            <div class="label c-red">Rao bán</div>
+            <div class="label c-red">{{'For sale'|translate}}</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
@@ -347,7 +347,7 @@
       <div class="col-lg-4 col-md-6 mix office hotel">
         <div class="property-item">
           <div class="pi-pic set-bg" data-setbg="assets/img/property/property-5.jpg">
-            <div class="label c-magenta">Rao bán</div>
+            <div class="label c-magenta">{{'For sale'|translate}}</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
@@ -377,11 +377,11 @@
       <div class="col-lg-4 col-md-6 mix house apart office">
         <div class="property-item">
           <div class="pi-pic set-bg" data-setbg="assets/img/property/property-6.jpg">
-            <div class="label">Cho thuê</div>
+            <div class="label">{{'Rent'|translate}}</div>
           </div>
           <div class="pi-text">
             <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
-            <div class="pt-price">VNĐ 289.0<span>/tháng</span></div>
+            <div class="pt-price">VNĐ 289.0<span>/{{'month'|translate}}</span></div>
             <h5><a routerLink="/">GoldCrest Residency</a></h5>
             <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
             <ul>
@@ -471,17 +471,17 @@
       <div class="col-lg-4 p-0">
         <div class="feature-property-left">
           <div class="section-title">
-            <h4>Các loại hình</h4>
+            <h4>{{'Types'| translate}}</h4>
           </div>
           <ul>
-            <li>Căn hộ</li>
-            <li>Nhà</li>
-            <li>Văn Phòng</li>
-            <li>Khách sạn</li>
+            <li>{{'Apartment'|translate}}</li>
+            <li>{{'House'| translate}}</li>
+            <li>{{'Office'|translate}}</li>
+            <li>{{'Hotel'| translate}}</li>
             <li>Villa</li>
-            <li>Nhà hàng</li>
+            <li>{{'Restaurant'|translate}}</li>
           </ul>
-          <a routerLink="/property/list-properties">Xem tất cả</a>
+          <a routerLink="/property/list-properties">{{'View All'| translate}}</a>
         </div>
       </div>
       <div class="col-lg-8 p-0">
@@ -491,7 +491,7 @@
               <h5 class="title">{{item.tenSanPham}}</h5>
               <p><span class="icon_pin_alt"></span>{{item.diaChi}}</p>
               <div class="label">Rao bán</div>
-              <h5>{{item.giaTien}} VNĐ<span>/tháng</span></h5>
+              <h5>{{item.giaTien}} VNĐ<span>/{{'month'|translate}}</span></h5>
               <ul>
                 <li><i class="fa fa-object-group"></i> 2, 283</li>
                 <li><i class="fa fa-bathtub"></i> 03</li>
@@ -592,32 +592,32 @@
   <div class="cs-item-list">
     <div class="cs-item set-bg" data-setbg="assets/img/categories/cat-1.jpg">
       <div class="cs-text">
-        <h5>Căn hộ</h5>
-        <span>230 bất động sản</span>
+        <h5>{{'Apartment'|translate}}</h5>
+        <span>230 {{'real estate'| translate}}</span>
       </div>
     </div>
     <div class="cs-item set-bg" data-setbg="assets/img/categories/cat-2.jpg">
       <div class="cs-text">
         <h5>Villa</h5>
-        <span>230 bất động sản</span>
+        <span>230 {{'real estate'| translate}}</span>
       </div>
     </div>
     <div class="cs-item set-bg" data-setbg="assets/img/categories/cat-3.jpg">
       <div class="cs-text">
-        <h5>Nhà</h5>
-        <span>230 bất động sản</span>
+        <h5>{{'House'| translate}}</h5>
+        <span>230 {{'real estate'| translate}}</span>
       </div>
     </div>
     <div class="cs-item set-bg" data-setbg="assets/img/categories/cat-4.jpg">
       <div class="cs-text">
-        <h5>Nhà hàng</h5>
-        <span>230 bất động sản</span>
+        <h5>{{'Restaurent'|translate}}</h5>
+        <span>230 {{'real estate'| translate}}</span>
       </div>
     </div>
     <div class="cs-item set-bg" data-setbg="assets/img/categories/cat-5.jpg">
       <div class="cs-text">
-        <h5>Văn phòng</h5>
-        <span>230 bất động sản</span>
+        <h5>{{'Office'| translate}}</h5>
+        <span>230 {{'real estate'| translate}}</span>
       </div>
     </div>
   </div>
